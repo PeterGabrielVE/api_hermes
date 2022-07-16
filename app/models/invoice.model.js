@@ -19,7 +19,7 @@ Invoice.create = (newInvoice, result) => {
 };
 
 Invoice.findById = (id, result) => {
-  sql.query(`SELECT * FROM Invoices WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM invoices WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -38,7 +38,7 @@ Invoice.findById = (id, result) => {
 };
 
 Invoice.getAll = (title, result) => {
-  let query = "SELECT * FROM Invoices";
+  let query = "SELECT * FROM invoices";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -57,7 +57,7 @@ Invoice.getAll = (title, result) => {
 };
 
 Invoice.getAllPublished = result => {
-  sql.query("SELECT * FROM Invoices", (err, res) => {
+  sql.query("SELECT * FROM invoices", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
