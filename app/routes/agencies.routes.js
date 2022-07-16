@@ -1,5 +1,5 @@
 module.exports = app => {
-    const invoices = require("../controllers/invoice.controller.js");
+    const invoices = require("../controllers/agencie.controller.js");
   
     var router = require("express").Router();
   
