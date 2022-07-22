@@ -1,28 +1,28 @@
 module.exports = app => {
-    const invoices = require("../controllers/agencie.controller.js");
+    const agencies = require("../controllers/agencie.controller.js");
   
     var router = require("express").Router();
   
     // Create a new Invoice
-    router.post("/", invoices.create);
+    router.post("/", agencies.create);
   
-    // Retrieve all invoices
-    router.get("/getAll", invoices.findAll);
+    // Retrieve all agencies
+    router.get("/getAll", agencies.findAll);
   
-    // Retrieve all published invoices
-    router.get("/published", invoices.findAllPublished);
+    // Retrieve all published agencies
+    router.get("/published", agencies.findAllPublished);
   
     // Retrieve a single Invoice with id
-    router.get("/:id", invoices.findOne);
+    router.get("/:id", agencies.findOne);
   
     // Update a Invoice with id
-    router.put("/:id", invoices.update);
+    router.put("/:id", agencies.update);
   
     // Delete a Invoice with id
-    router.delete("/:id", invoices.delete);
+    router.delete("/:id", agencies.delete);
   
-    // Delete all invoices
-    router.delete("/", invoices.deleteAll);
+    // Delete all agencies
+    router.delete("/", agencies.deleteAll);
   
     app.use('/api/agencies', router);
   };

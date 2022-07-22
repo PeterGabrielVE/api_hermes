@@ -1,28 +1,28 @@
 module.exports = app => {
-    const invoices = require("../controllers/assignment.controller.js");
+    const assignments = require("../controllers/assignment.controller.js");
   
     var router = require("express").Router();
   
     // Create a new Invoice
-    router.post("/", invoices.create);
+    router.post("/", assignments.create);
   
-    // Retrieve all invoices
-    router.get("/getAll", invoices.findAll);
+    // Retrieve all assignments
+    router.get("/getAll", assignments.findAll);
   
-    // Retrieve all published invoices
-    router.get("/published", invoices.findAllPublished);
+    // Retrieve all published assignments
+    router.get("/published", assignments.findAllPublished);
   
     // Retrieve a single Invoice with id
-    router.get("/:id", invoices.findOne);
+    router.get("/:id", assignments.findOne);
   
     // Update a Invoice with id
-    router.put("/:id", invoices.update);
+    router.put("/:id", assignments.update);
   
     // Delete a Invoice with id
-    router.delete("/:id", invoices.delete);
+    router.delete("/:id", assignments.delete);
   
-    // Delete all invoices
-    router.delete("/", invoices.deleteAll);
+    // Delete all assignments
+    router.delete("/", assignments.deleteAll);
   
     app.use('/api/assignments', router);
   };

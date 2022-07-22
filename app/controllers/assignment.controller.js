@@ -17,7 +17,7 @@ exports.create = (req, res) => {
   });
 
   // Save Invoice in the database
-  Assignment.create(Assignment, (err, data) => {
+  Assignment.create(assignment, (err, data) => {
     if (err)
       res.status(500).send({
         message:
