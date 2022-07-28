@@ -1,4 +1,4 @@
-const Invoice = require("../models/invoice.model.js");
+const Invoices_outcome = require("../models/invoices_outcome.model.js");
 
 // Create and Save a new Invoice
 exports.create = (req, res) => {
@@ -8,17 +8,17 @@ exports.create = (req, res) => {
     });
   }
 
-  const invoice = new Invoice({
+  const invoices_outcome = new Invoices_outcome({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
 
-  Invoice.create(invoice, (err, data) => {
+  Invoices_outcome.create(invoices_outcome, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Invoices_outcome."
       });
     else res.send(data);
   });
@@ -27,26 +27,26 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Invoices_outcome.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Invoices_outcomes."
       });
     else res.send(data);
   });
 };
 
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+    Invoices_outcome.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Invoices_outcome with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Invoices_outcome with id " + req.params.id
         });
       }
     } else res.send(data);
@@ -54,11 +54,11 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+  Invoices_outcome.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Invoices_outcomes."
       });
     else res.send(data);
   });
@@ -74,18 +74,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Invoices_outcome.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Invoices_outcome(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Invoices_outcome with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Invoices_outcome with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -94,28 +94,28 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+    Invoices_outcome.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Invoices_outcome with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Invoices_outcome with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Invoices_outcome was deleted successfully!` });
   });
 };
 
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+    Invoices_outcome.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Invoices_outcomes."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Invoices_outcomes were deleted successfully!` });
   });
 };

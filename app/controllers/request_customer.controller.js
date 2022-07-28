@@ -1,6 +1,5 @@
-const Invoice = require("../models/invoice.model.js");
+const Request_customer = require("../models/request_customer.model.js");
 
-// Create and Save a new Invoice
 exports.create = (req, res) => {
   if (!req.body) {
     res.status(400).send({
@@ -8,17 +7,17 @@ exports.create = (req, res) => {
     });
   }
 
-  const invoice = new Invoice({
+  const request_customer = new Request_customer({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
 
-  Invoice.create(invoice, (err, data) => {
+  Request_customer.create(request_customer, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Request_customer."
       });
     else res.send(data);
   });
@@ -27,26 +26,26 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Request_customer.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Request_customers."
       });
     else res.send(data);
   });
 };
 
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+    Request_customer.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Request_customer with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Request_customer with id " + req.params.id
         });
       }
     } else res.send(data);
@@ -54,11 +53,11 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+    Request_customer.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Request_customers."
       });
     else res.send(data);
   });
@@ -74,18 +73,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Request_customer.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Request_customer(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Request_customer with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Request_customer with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -94,28 +93,28 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+    Request_customer.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Request_customer with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Request_customer with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Request_customer was deleted successfully!` });
   });
 };
 
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+    Request_customer.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Request_customers."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Request_customers were deleted successfully!` });
   });
 };

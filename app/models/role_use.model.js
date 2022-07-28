@@ -1,23 +1,23 @@
 const sql = require("./db.js");
-const Invoice = function(invoice) {
-  this.title = invoice.id;
+const Role_use = function(role_use) {
+  this.title = role_use.id;
 };
 
-Invoice.create = (newInvoice, result) => {
-  sql.query("INSERT INTO Invoices SET ?", newInvoice, (err, res) => {
+Role_use.create = (newRole_use, result) => {
+  sql.query("INSERT INTO Role_user SET ?", newRole_use, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created Invoice: ", { id: res.insertId, ...newInvoice });
-    result(null, { id: res.insertId, ...newInvoice });
+    console.log("created Role_use: ", { id: res.insertId, ...newRole_use });
+    result(null, { id: res.insertId, ...newRole_use });
   });
 };
 
-Invoice.findById = (id, result) => {
-  sql.query(`SELECT * FROM invoices WHERE id = ${id}`, (err, res) => {
+Role_use.findById = (id, result) => {
+  sql.query(`SELECT * FROM role_user WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -25,7 +25,7 @@ Invoice.findById = (id, result) => {
     }
 
     if (res.length) {
-      console.log("found Invoice: ", res[0]);
+      console.log("found Role_use: ", res[0]);
       result(null, res[0]);
       return;
     }
@@ -35,8 +35,8 @@ Invoice.findById = (id, result) => {
   });
 };
 
-Invoice.getAll = (title, result) => {
-  let query = "SELECT * FROM invoices";
+Role_use.getAll = (title, result) => {
+  let query = "SELECT * FROM role_user";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -49,28 +49,28 @@ Invoice.getAll = (title, result) => {
       return;
     }
 
-    console.log("Invoices: ", res);
+    console.log("Role_user: ", res);
     result(null, res);
   });
 };
 
-Invoice.getAllPublished = result => {
-  sql.query("SELECT * FROM invoices", (err, res) => {
+Role_use.getAllPublished = result => {
+  sql.query("SELECT * FROM role_user", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log("Invoices: ", res);
+    console.log("Role_user: ", res);
     result(null, res);
   });
 };
 
-Invoice.updateById = (id, Invoice, result) => {
+Role_use.updateById = (id, Role_use, result) => {
   sql.query(
-    "UPDATE Invoices SET title = ?, description = ?, published = ? WHERE id = ?",
-    [Invoice.id, id],
+    "UPDATE Role_user SET title = ?, description = ?, published = ? WHERE id = ?",
+    [Role_use.id, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -83,14 +83,14 @@ Invoice.updateById = (id, Invoice, result) => {
         return;
       }
 
-      console.log("updated Invoice: ", { id: id, ...invoice });
-      result(null, { id: id, ...invoice });
+      console.log("updated Role_use: ", { id: id, ...role_use });
+      result(null, { id: id, ...role_use });
     }
   );
 };
 
-Invoice.remove = (id, result) => {
-  sql.query("DELETE FROM Invoices WHERE id = ?", id, (err, res) => {
+Role_use.remove = (id, result) => {
+  sql.query("DELETE FROM Role_user WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -102,22 +102,22 @@ Invoice.remove = (id, result) => {
       return;
     }
 
-    console.log("deleted Invoice with id: ", id);
+    console.log("deleted Role_use with id: ", id);
     result(null, res);
   });
 };
 
-Invoice.removeAll = result => {
-  sql.query("DELETE FROM Invoices", (err, res) => {
+Role_use.removeAll = result => {
+  sql.query("DELETE FROM Role_user", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log(`deleted ${res.affectedRows} Invoices`);
+    console.log(`deleted ${res.affectedRows} Role_user`);
     result(null, res);
   });
 };
 
-module.exports = Invoice;
+module.exports = Role_use;

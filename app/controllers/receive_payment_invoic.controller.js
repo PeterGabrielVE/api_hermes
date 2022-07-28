@@ -1,6 +1,5 @@
-const Invoice = require("../models/invoice.model.js");
+const Receive_payment_invoic = require("../models/receive_payment_invoic.model.js");
 
-// Create and Save a new Invoice
 exports.create = (req, res) => {
   if (!req.body) {
     res.status(400).send({
@@ -8,17 +7,17 @@ exports.create = (req, res) => {
     });
   }
 
-  const invoice = new Invoice({
+  const receive_payment_invoic = new Receive_payment_invoic({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
 
-  Invoice.create(invoice, (err, data) => {
+  Receive_payment_invoic.create(receive_payment_invoic, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Receive_payment_invoic."
       });
     else res.send(data);
   });
@@ -27,26 +26,26 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Receive_payment_invoic.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Receive_payment_invoice."
       });
     else res.send(data);
   });
 };
 
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+    Receive_payment_invoic.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Receive_payment_invoic with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Receive_payment_invoic with id " + req.params.id
         });
       }
     } else res.send(data);
@@ -54,11 +53,11 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+    Receive_payment_invoic.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Receive_payment_invoice."
       });
     else res.send(data);
   });
@@ -74,18 +73,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Receive_payment_invoic.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Receive_payment_invoic(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Receive_payment_invoic with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Receive_payment_invoic with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -94,28 +93,28 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+    Receive_payment_invoic.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Receive_payment_invoic with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Receive_payment_invoic with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Receive_payment_invoic was deleted successfully!` });
   });
 };
 
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+    Receive_payment_invoic.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Receive_payment_invoice."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Receive_payment_invoice were deleted successfully!` });
   });
 };

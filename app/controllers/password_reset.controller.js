@@ -1,6 +1,5 @@
-const Invoice = require("../models/invoice.model.js");
+const Password_reset = require("../models/password_reset.model.js");
 
-// Create and Save a new Invoice
 exports.create = (req, res) => {
   if (!req.body) {
     res.status(400).send({
@@ -8,17 +7,17 @@ exports.create = (req, res) => {
     });
   }
 
-  const invoice = new Invoice({
+  const password_reset = new Password_reset({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
 
-  Invoice.create(invoice, (err, data) => {
+  Password_reset.create(password_reset, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Password_reset."
       });
     else res.send(data);
   });
@@ -27,26 +26,26 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Password_reset.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Password_resets."
       });
     else res.send(data);
   });
 };
 
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+    Password_reset.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Password_reset with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Password_reset with id " + req.params.id
         });
       }
     } else res.send(data);
@@ -54,11 +53,11 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+  Password_reset.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Password_resets."
       });
     else res.send(data);
   });
@@ -74,18 +73,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Password_reset.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Password_reset(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Password_reset with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Password_reset with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -94,28 +93,28 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+    Password_reset.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Password_reset with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Password_reset with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Password_reset was deleted successfully!` });
   });
 };
 
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+    Password_reset.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Password_resets."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Password_resets were deleted successfully!` });
   });
 };

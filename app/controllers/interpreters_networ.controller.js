@@ -1,4 +1,4 @@
-const Invoice = require("../models/invoice.model.js");
+const Interpreters_networ = require("../models/interpreters_networ.model.js");
 
 // Create and Save a new Invoice
 exports.create = (req, res) => {
@@ -8,17 +8,16 @@ exports.create = (req, res) => {
     });
   }
 
-  const invoice = new Invoice({
+  const interpreters_networ = new Interpreters_networ({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
-
-  Invoice.create(invoice, (err, data) => {
+  Interpreters_networ.create(interpreters_networ, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Interpreters_networ."
       });
     else res.send(data);
   });
@@ -27,26 +26,26 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Interpreters_networ.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Interpreters_network."
       });
     else res.send(data);
   });
 };
 
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+    Interpreters_networ.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Interpreters_networ with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Interpreters_networ with id " + req.params.id
         });
       }
     } else res.send(data);
@@ -54,11 +53,11 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+    Interpreters_networ.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Interpreters_network."
       });
     else res.send(data);
   });
@@ -74,18 +73,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Interpreters_networ.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Interpreters_networ(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Interpreters_networ with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Interpreters_networ with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -94,28 +93,28 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+    Interpreters_networ.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Interpreters_networ with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Interpreters_networ with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Interpreters_networ was deleted successfully!` });
   });
 };
 
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+ Interpreters_networ.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Interpreters_network."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Interpreters_network were deleted successfully!` });
   });
 };

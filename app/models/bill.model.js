@@ -1,23 +1,25 @@
 const sql = require("./db.js");
-const Invoice = function(invoice) {
-  this.title = invoice.id;
+
+// constructor
+const Bill = function(Bill) {
+  this.title = Bill.id;
 };
 
-Invoice.create = (newInvoice, result) => {
-  sql.query("INSERT INTO Invoices SET ?", newInvoice, (err, res) => {
+Bill.create = (newBill, result) => {
+  sql.query("INSERT INTO Bill SET ?", newBill, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created Invoice: ", { id: res.insertId, ...newInvoice });
-    result(null, { id: res.insertId, ...newInvoice });
+    console.log("created Bill: ", { id: res.insertId, ...newBill });
+    result(null, { id: res.insertId, ...newBill });
   });
 };
 
-Invoice.findById = (id, result) => {
-  sql.query(`SELECT * FROM invoices WHERE id = ${id}`, (err, res) => {
+Bill.findById = (id, result) => {
+  sql.query(`SELECT * FROM Bill WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -25,18 +27,18 @@ Invoice.findById = (id, result) => {
     }
 
     if (res.length) {
-      console.log("found Invoice: ", res[0]);
+      console.log("found Bill: ", res[0]);
       result(null, res[0]);
       return;
     }
 
-    // not found Invoice with the id
+    // not found Agencie with the id
     result({ kind: "not_found" }, null);
   });
 };
 
-Invoice.getAll = (title, result) => {
-  let query = "SELECT * FROM invoices";
+Bill.getAll = (title, result) => {
+  let query = "SELECT * FROM Bills";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -49,28 +51,28 @@ Invoice.getAll = (title, result) => {
       return;
     }
 
-    console.log("Invoices: ", res);
+    console.log("Bills: ", res);
     result(null, res);
   });
 };
 
-Invoice.getAllPublished = result => {
-  sql.query("SELECT * FROM invoices", (err, res) => {
+Bill.getAllPublished = result => {
+  sql.query("SELECT * FROM Bills", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log("Invoices: ", res);
+    console.log("Bills: ", res);
     result(null, res);
   });
 };
 
-Invoice.updateById = (id, Invoice, result) => {
+Bill.updateById = (id, Bill, result) => {
   sql.query(
-    "UPDATE Invoices SET title = ?, description = ?, published = ? WHERE id = ?",
-    [Invoice.id, id],
+    "UPDATE Bills SET title = ?, description = ?, published = ? WHERE id = ?",
+    [Bill.id, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -79,18 +81,19 @@ Invoice.updateById = (id, Invoice, result) => {
       }
 
       if (res.affectedRows == 0) {
+        // not found Agencie with the id
         result({ kind: "not_found" }, null);
         return;
       }
 
-      console.log("updated Invoice: ", { id: id, ...invoice });
-      result(null, { id: id, ...invoice });
+      console.log("updated Bill: ", { id: id, ...Bill });
+      result(null, { id: id, ...Bill });
     }
   );
 };
 
-Invoice.remove = (id, result) => {
-  sql.query("DELETE FROM Invoices WHERE id = ?", id, (err, res) => {
+Bill.remove = (id, result) => {
+  sql.query("DELETE FROM Bills WHERE id = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -98,26 +101,27 @@ Invoice.remove = (id, result) => {
     }
 
     if (res.affectedRows == 0) {
+      // not found Agencie with the id
       result({ kind: "not_found" }, null);
       return;
     }
 
-    console.log("deleted Invoice with id: ", id);
+    console.log("deleted Bill with id: ", id);
     result(null, res);
   });
 };
 
-Invoice.removeAll = result => {
-  sql.query("DELETE FROM Invoices", (err, res) => {
+Bill.removeAll = result => {
+  sql.query("DELETE FROM Bills", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
 
-    console.log(`deleted ${res.affectedRows} Invoices`);
+    console.log(`deleted ${res.affectedRows} Bills`);
     result(null, res);
   });
 };
 
-module.exports = Invoice;
+module.exports = Bill;

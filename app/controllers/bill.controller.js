@@ -1,71 +1,78 @@
-const Invoice = require("../models/invoice.model.js");
+const Bill = require("../models/bill.model.js");
 
-// Create and Save a new Invoice
+// Create and Save a new Agencie
 exports.create = (req, res) => {
+  // Validate request
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
   }
 
-  const invoice = new Invoice({
+  // Create a Agencie
+  const bill = new Bill({
     title: req.body.title,
     description: req.body.description,
     published: req.body.published || false
   });
 
-  Invoice.create(invoice, (err, data) => {
+  // Save Agencie in the database
+  Bill.create(bill, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Invoice."
+          err.message || "Some error occurred while creating the Bill."
       });
     else res.send(data);
   });
 };
 
+// Retrieve all Agencies from the database (with condition).
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
-  Invoice.getAll(title, (err, data) => {
+  Bill.getAll(title, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Bills."
       });
     else res.send(data);
   });
 };
 
+// Find a single Agencie by Id
 exports.findOne = (req, res) => {
-  Invoice.findById(req.params.id, (err, data) => {
+  Bill.findById(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Bill with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Invoice with id " + req.params.id
+          message: "Error retrieving Bill with id " + req.params.id
         });
       }
     } else res.send(data);
   });
 };
 
+// find all published Agencies
 exports.findAllPublished = (req, res) => {
-  Invoice.getAllPublished((err, data) => {
+  Bill.getAllPublished((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Invoices."
+          err.message || "Some error occurred while retrieving Bills."
       });
     else res.send(data);
   });
 };
 
+// Update a Agencie identified by the id in the request
 exports.update = (req, res) => {
-
+  // Validate Request
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -74,18 +81,18 @@ exports.update = (req, res) => {
 
   console.log(req.body);
 
-  Invoice.updateById(
+  Bill.updateById(
     req.params.id,
-    new Invoice(req.body),
+    new Bill(req.body),
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Invoice with id ${req.params.id}.`
+            message: `Not found Bill with id ${req.params.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error updating Invoice with id " + req.params.id
+            message: "Error updating Bill with id " + req.params.id
           });
         }
       } else res.send(data);
@@ -93,29 +100,31 @@ exports.update = (req, res) => {
   );
 };
 
+// Delete a Agencie with the specified id in the request
 exports.delete = (req, res) => {
-  Invoice.remove(req.params.id, (err, data) => {
+ Bill.remove(req.params.id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Invoice with id ${req.params.id}.`
+          message: `Not found Bill with id ${req.params.id}.`
         });
       } else {
         res.status(500).send({
-          message: "Could not delete Invoice with id " + req.params.id
+          message: "Could not delete Bill with id " + req.params.id
         });
       }
-    } else res.send({ message: `Invoice was deleted successfully!` });
+    } else res.send({ message: `Bill was deleted successfully!` });
   });
 };
 
+// Delete all Agencies from the database.
 exports.deleteAll = (req, res) => {
-  Invoice.removeAll((err, data) => {
+ Bill.removeAll((err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all Invoices."
+          err.message || "Some error occurred while removing all Bills."
       });
-    else res.send({ message: `All Invoices were deleted successfully!` });
+    else res.send({ message: `All Bills were deleted successfully!` });
   });
 };
