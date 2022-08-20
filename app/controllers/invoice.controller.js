@@ -2,14 +2,12 @@ const Invoice = require("../models/invoice.model.js");
 
 // Create and Save a new Invoice
 exports.create = (req, res) => {
-  // Validate request
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
   }
 
-  // Create a Invoice
   const invoice = new Invoice({
     Invoice_Status: req.body.Invoice_Status,
     Invoice_Jobs_Number : req.body.Invoice_Jobs_Number,
@@ -38,7 +36,6 @@ exports.create = (req, res) => {
   
   });
 
-  // Save Invoice in the database
   Invoice.create(invoice, (err, data) => {
     if (err)
       res.status(500).send({
@@ -49,7 +46,6 @@ exports.create = (req, res) => {
   });
 };
 
-// Retrieve all Invoices from the database (with condition).
 exports.findAll = (req, res) => {
   const title = req.query.title;
 
@@ -63,7 +59,6 @@ exports.findAll = (req, res) => {
   });
 };
 
-// Find a single Invoice by Id
 exports.findOne = (req, res) => {
   Invoice.findById(req.params.id, (err, data) => {
     if (err) {
@@ -80,7 +75,6 @@ exports.findOne = (req, res) => {
   });
 };
 
-// find all published Invoices
 exports.findAllPublished = (req, res) => {
   Invoice.getAllPublished((err, data) => {
     if (err)
@@ -92,9 +86,8 @@ exports.findAllPublished = (req, res) => {
   });
 };
 
-// Update a Invoice identified by the id in the request
 exports.update = (req, res) => {
-  // Validate Request
+
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -122,7 +115,6 @@ exports.update = (req, res) => {
   );
 };
 
-// Delete a Invoice with the specified id in the request
 exports.delete = (req, res) => {
   Invoice.remove(req.params.id, (err, data) => {
     if (err) {
@@ -139,7 +131,6 @@ exports.delete = (req, res) => {
   });
 };
 
-// Delete all Invoices from the database.
 exports.deleteAll = (req, res) => {
   Invoice.removeAll((err, data) => {
     if (err)

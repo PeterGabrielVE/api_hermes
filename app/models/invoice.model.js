@@ -1,6 +1,4 @@
 const sql = require("./db.js");
-
-// constructor
 const Invoice = function(invoice) {
 
   this.Invoice_Status = invoice.Invoice_Status;
@@ -107,7 +105,6 @@ Invoice.updateById = (id, Invoice, result) => {
       }
 
       if (res.affectedRows == 0) {
-        // not found Invoice with the id
         result({ kind: "not_found" }, null);
         return;
       }
@@ -127,7 +124,6 @@ Invoice.remove = (id, result) => {
     }
 
     if (res.affectedRows == 0) {
-      // not found Invoice with the id
       result({ kind: "not_found" }, null);
       return;
     }
