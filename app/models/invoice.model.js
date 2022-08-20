@@ -2,7 +2,7 @@ const sql = require("./db.js");
 
 // constructor
 const Invoice = function(invoice) {
-  this.title = invoice.id;
+  this.id = invoice.id;
 };
 
 Invoice.create = (newInvoice, result) => {
