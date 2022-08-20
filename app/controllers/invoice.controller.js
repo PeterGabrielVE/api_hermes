@@ -11,9 +11,31 @@ exports.create = (req, res) => {
 
   // Create a Invoice
   const invoice = new Invoice({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Invoice_Status: req.body.Invoice_Status,
+    Invoice_Jobs_Number : req.body.Invoice_Jobs_Number,
+    Invoice_Job_Cus_Number : req.body.Invoice_Job_Cus_Number,
+    Invoice_Cus_Company_Name : req.body.Invoice_Cus_Company_Name,
+    Invoice_Cus_Billing_Company_Street_1 : req.body.Invoice_Cus_Billing_Company_Street_1,
+    Invoice_Cus_Billing_Company_Street_2 : req.body.Invoice_Cus_Billing_Company_Street_2,
+
+    Invoice_Cus_Billing_City : req.body.Invoice_Cus_Billing_City,
+    Invoice_Cus_Billing_State : req.body.Invoice_Cus_Billing_State,
+    Invoice_Cus_Billing_Zip : req.body.Invoice_Cus_Billing_Zip,
+    Invoice_Cus_Billing_Term : req.body.Invoice_Cus_Billing_Term,
+    Invoice_Cus_Billing_E_mail : req.body.Invoice_Cus_Billing_E_mail,
+
+    Invoice_Subtotal : req.body.Invoice_Subtotal,
+    Invoice_Credits : req.body.Invoice_Credits,
+    Invoice_Total : req.body.Invoice_Total,
+    Invoice_Orig_Amount : req.body.Invoice_Orig_Amount,
+    Invoice_Amount_Due : req.body.Invoice_Amount_Due,
+
+    Invoice_Payment : req.body.Invoice_Payment,
+    Invoice_Attachments : req.body.Invoice_Attachments,
+    Invoice_Date : req.body.Invoice_Date,
+    Invoice_Due_Date : req.body.Invoice_Due_Date,
+    Invoice_Notes : req.body.Invoice_Notes,
+  
   });
 
   // Save Invoice in the database

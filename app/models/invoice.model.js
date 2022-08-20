@@ -2,10 +2,36 @@ const sql = require("./db.js");
 
 // constructor
 const Invoice = function(invoice) {
-  this.id = invoice.id;
+
+  this.Invoice_Status = invoice.Invoice_Status;
+  this.Invoice_Jobs_Number = invoice.Invoice_Jobs_Number;
+  this.Invoice_Job_Cus_Number = invoice.Invoice_Job_Cus_Number;
+  this.Invoice_Cus_Company_Name = invoice.Invoice_Cus_Company_Name;
+  this.Invoice_Cus_Billing_Company_Street_1 = invoice.Invoice_Cus_Billing_Company_Street_1;
+  this.Invoice_Cus_Billing_Company_Street_2 = invoice.Invoice_Cus_Billing_Company_Street_2;
+
+  this.Invoice_Cus_Billing_City = invoice.Invoice_Cus_Billing_City;
+  this.Invoice_Cus_Billing_State = invoice.Invoice_Cus_Billing_State;
+  this.Invoice_Cus_Billing_Zip = invoice.Invoice_Cus_Billing_Zip;
+  this.Invoice_Cus_Billing_Term = invoice.Invoice_Cus_Billing_Term;
+  this.Invoice_Cus_Billing_E_mail = invoice.Invoice_Cus_Billing_E_mail;
+
+  this.Invoice_Subtotal = invoice.Invoice_Subtotal;
+  this.Invoice_Credits = invoice.Invoice_Credits;
+  this.Invoice_Total = invoice.Invoice_Total;
+  this.Invoice_Orig_Amount = invoice.Invoice_Orig_Amount;
+  this.Invoice_Amount_Due = invoice.Invoice_Amount_Due;
+
+  this.Invoice_Payment = invoice.Invoice_Payment;
+  this.Invoice_Attachments = invoice.Invoice_Attachments;
+  this.Invoice_Date = invoice.Invoice_Date;
+  this.Invoice_Due_Date = invoice.Invoice_Due_Date;
+  this.Invoice_Notes= invoice.Invoice_Notes;
+  
 };
 
 Invoice.create = (newInvoice, result) => {
+
   sql.query("INSERT INTO Invoices SET ?", newInvoice, (err, res) => {
     if (err) {
       console.log("error: ", err);
