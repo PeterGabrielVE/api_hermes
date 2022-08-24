@@ -8,9 +8,8 @@ exports.create = (req, res) => {
   }
 
   const receive_payment_invoic = new Receive_payment_invoic({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    invoice_id: req.body.invoice_id,
+    receive_id: req.body.receive_id,
   });
 
   Receive_payment_invoic.create(receive_payment_invoic, (err, data) => {

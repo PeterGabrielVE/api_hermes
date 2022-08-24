@@ -8,9 +8,15 @@ exports.create = (req, res) => {
   }
 
   const employee = new Employee({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    person_id: req.body.person_id,
+    state: req.body.state,
+    city: req.body.city,
+    zip: req.body.zip,
+    main_email: req.body.main_email,
+    main_telephone: req.body.main_telephone,
+    Address: req.body.Address,
+    county: req.body.county,
+    apt_suite: req.body.apt_suite,
   });
 
  Employee.create(employee, (err, data) => {

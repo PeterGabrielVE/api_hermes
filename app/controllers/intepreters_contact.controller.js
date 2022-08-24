@@ -9,8 +9,12 @@ exports.create = (req, res) => {
 
   const intepreters_contact = new Intepreters_contact({
     title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    deparment: req.body.deparment,
+    name: req.body.name,
+    phone_ext: req.body.phone_ext,
+    phone_number: req.body.phone_number,
+    email: req.body.email,
+    interpreter_id : req.body.interpreter_id ,
   });
 
   Intepreters_contact.create(intepreters_contact, (err, data) => {

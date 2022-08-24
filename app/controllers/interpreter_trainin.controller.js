@@ -8,9 +8,13 @@ exports.create = (req, res) => {
   }
 
   const interpreter_trainin = new Interpreter_trainin({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    last_name: req.body.last_name,
+    phone_number: req.body.phone_number,
+    email: req.body.email,
+    date_enroll: req.body.date_enroll,
+    updated_at: req.body.updated_at,
+    created_at: req.body.created_at,
   });
 
   Interpreter_trainin.create(interpreter_trainin, (err, data) => {

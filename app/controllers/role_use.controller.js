@@ -9,9 +9,8 @@ exports.create = (req, res) => {
   }
 
   const role_use = new Role_use({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    role_id: req.body.role_id,
+    user_id: req.body.user_id,
   });
 
   Role_use.create(role_use, (err, data) => {

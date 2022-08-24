@@ -8,9 +8,10 @@ exports.create = (req, res) => {
   }
 
   const iutcome_assign_interpreter = new Outcome_assign_interpreter({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    interpreter_id : req.body.interpreter_id ,
+    jobs_id : req.body.jobs_id ,
+    outcome_id : req.body.outcome_id ,
+    notes: req.body.notes,
   });
 
   Outcome_assign_interpreter.create(outcome_assign_interpreter, (err, data) => {

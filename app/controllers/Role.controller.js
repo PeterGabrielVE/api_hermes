@@ -8,9 +8,11 @@ exports.create = (req, res) => {
   }
 
   const role = new Role({
-    title: req.body.title,
+    name: req.body.name,
     description: req.body.description,
-    published: req.body.published || false
+    guard_name: req.body.guard_name,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
 
   Role.create(role, (err, data) => {

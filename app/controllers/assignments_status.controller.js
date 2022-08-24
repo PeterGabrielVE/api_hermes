@@ -11,9 +11,8 @@ exports.create = (req, res) => {
 
   // Create a 
   const assignments_statu = new Assignments_statu({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+  
   });
 
   // Save Invoice in the database

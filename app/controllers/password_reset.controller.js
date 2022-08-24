@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const password_reset = new Password_reset({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    email : req.body.email ,
+    token: req.body.token,
+    created_at: req.body.created_at,
   });
 
   Password_reset.create(password_reset, (err, data) => {

@@ -9,9 +9,7 @@ exports.create = (req, res) => {
   }
 
   const invoices_outcome = new Invoices_outcome({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name
   });
 
   Invoices_outcome.create(invoices_outcome, (err, data) => {

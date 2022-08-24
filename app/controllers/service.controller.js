@@ -8,9 +8,16 @@ exports.create = (req, res) => {
   }
 
   const service = new Service({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Service_Name : req.body.Service_Name ,
+    Service_State : req.body.Service_State ,
+    Service_Code: req.body.Service_Code,
+    Service_Rate: req.body.Service_Rate,
+    Service_Cus_Number : req.body.Service_Cus_Number ,
+    Service_Type : req.body.Service_Type ,
+    attachments: req.body.attachments,
+    customer_id: req.body.customer_id,
+    language_id: req.body.language_id,
+    services_offereds_id: req.body.services_offereds_id,
   });
 
   Service.create(Service, (err, data) => {

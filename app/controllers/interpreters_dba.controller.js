@@ -8,9 +8,17 @@ exports.create = (req, res) => {
   }
 
   const interpreters_dba = new Interpreters_dba({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    contractors_id : req.body.contractors_id ,
+    person_id : req.body.person_id ,
+    dba: req.body.dba,
+    birthdate: req.body.birthdate,
+    gender: req.body.gender,
+    education_Degree: req.body.education_Degree,
+    years_school: req.body.years_school,
+    initial: req.body.initial,
+    training_Certifications: req.body.training_Certifications,
+    agency_Currently_Working: req.body.agency_Currently_Working,
+    prefix: req.body.prefix,
   });
 
   Interpreters_dba.create(interpreters_dba, (err, data) => {

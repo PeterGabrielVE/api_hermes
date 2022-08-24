@@ -11,9 +11,20 @@ exports.create = (req, res) => {
 
   // Create a Agencie
   const bill_payment = new Bill_payment({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    status: req.body.status,
+    date_receive: req.body.date_receive,
+    bills_list: req.body.bills_list,
+    assignments_list: req.body.assignments_list,
+    interpreter_id : req.body.interpreter_id ,
+    payment_method: req.body.payment_method,
+    date_Payment: req.body.date_Payment,
+    transaction_number: req.body.transaction_number,
+    check_number: req.body.check_number,
+    attachment: req.body.attachment,
+    payment_total: req.body.payment_total,
+    account: req.body.account,
+    check_payment_date: req.body.check_payment_date,
+    attachment_Check_Trans: req.body.attachment_Check_Trans,
   });
 
   // Save Agencie in the database

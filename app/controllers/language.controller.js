@@ -9,9 +9,7 @@ exports.create = (req, res) => {
   }
 
   const language = new Language({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    language: req.body.language,
   });
 
   Language.create(language, (err, data) => {

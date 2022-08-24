@@ -8,9 +8,26 @@ exports.create = (req, res) => {
   }
 
   const receive_assignmen = new Receive_assignmen({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    jobs_id : req.body.jobs_id ,
+    date_receive: req.body.date_receive,
+    start_date: req.body.start_date,
+    start_hour: req.body.start_hour,
+    end_date: req.body.end_date,
+    end_hour: req.body.end_hour,
+    total_encounter_hours: req.body.total_encounter_hours,
+    total_encounter_minutes: req.body.total_encounter_minutes,
+    total_encounter_pages: req.body.total_encounter_pages,
+    total_encounter_words: req.body.total_encounter_words,
+    total_encounter_days: req.body.total_encounter_days,
+    total_encounter_classes: req.body.total_encounter_classes,
+    parking_tolls	: req.body.parking_tolls	,
+    rate_mileage: req.body.rate_mileage,
+    miles: req.body.miles,
+    total_mileage: req.body.total_mileage,
+    attachment_parking_tolls: req.body.attachment_parking_tolls,
+    attachment_form: req.body.attachment_form,
+    reported_problem: req.body.reported_problem,
+    outcome: req.body.outcome,
   });
 
   Receive_assignmen.create(receive_assignmen, (err, data) => {

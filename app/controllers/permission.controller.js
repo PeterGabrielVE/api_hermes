@@ -9,9 +9,10 @@ exports.create = (req, res) => {
   }
 
   const permission = new Permission({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    guard_name: req.body.guard_name,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
 
   Permission.create(permission, (err, data) => {

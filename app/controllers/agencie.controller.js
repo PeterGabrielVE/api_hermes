@@ -11,9 +11,8 @@ exports.create = (req, res) => {
 
   // Create a Agencie
   const agencie = new Agencie({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    contractors_id : req.body.contractors_id ,
+    name: req.body.name,
   });
 
   // Save Agencie in the database

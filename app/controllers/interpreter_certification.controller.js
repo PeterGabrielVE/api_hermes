@@ -8,9 +8,12 @@ exports.create = (req, res) => {
   }
 
   const interpreter_certification = new Interpreter_certification({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    interpreter_id : req.body.interpreter_id ,
+    certification_id : req.body.certification_id ,
+    number: req.body.number,
+    exp_date: req.body.exp_date,
+    state: req.body.state,
+    notes: req.body.notes,
   });
   Interpreter_certification.create(interpreter_certification, (err, data) => {
     if (err)

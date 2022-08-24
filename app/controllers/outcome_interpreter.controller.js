@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const outcome_interpreter = new Outcome_interpreter({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Outcome_interpreter.create(outcome_interpreter, (err, data) => {

@@ -11,9 +11,7 @@ exports.create = (req, res) => {
 
   // Create a Invoice
   const certification = new Certification({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   // Save Invoice in the database

@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const customer_service_state = new Customer_service_state({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    customer_id: req.body.customer_id,
+    state_id: req.body.state_id,
+    service_id: req.body.service_id,
   });
 
   Customer_service_state.create(customer_service_state, (err, data) => {

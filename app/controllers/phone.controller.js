@@ -8,9 +8,10 @@ exports.create = (req, res) => {
   }
 
   const phone = new Phone({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    number: req.body.number,
+    ext: req.body.ext,
+    type: req.body.type,
+    contactcustomer_id : req.body.contactcustomer_id ,
   });
 
   Phone.create(phone, (err, data) => {

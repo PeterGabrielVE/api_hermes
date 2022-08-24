@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const model_has_role = new Invoice({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    role_id : req.body.role_id ,
+    model_type : req.body.model_type ,
+    model_id : req.body.model_id,
   });
 
   Model_has_role.create(model_has_role, (err, data) => {

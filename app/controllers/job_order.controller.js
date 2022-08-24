@@ -9,9 +9,32 @@ exports.create = (req, res) => {
   }
 
   const job_order = new Job_order({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    jobs_id : req.body.jobs_id ,
+    Jobs_Status: req.body.Jobs_Status,
+    customers_id : req.body.customers_id ,
+    Jobs_Customers_Company: req.body.Jobs_Customers_Company,
+    Jobs_Service_Name : req.body.Jobs_Service_Name ,
+    Jobs_Service_Code: req.body.Jobs_Service_Code,
+    Jobs_Service_Name_Rate: req.body.Jobs_Service_Name_Rate,
+    Jobs_Service_Hours_Estimate: req.body.Jobs_Service_Hours_Estimate,
+    Jobs_Service_Hours_Estimate_Cost: req.body.Jobs_Service_Hours_Estimate_Cost,
+    Jobs_Service_Mileage_Code: req.body.Jobs_Service_Mileage_Code,
+    Jobs_Service_Mileage_Name : req.body.Jobs_Service_Mileage_Name ,
+    Jobs_Service_Mileage_Rate: req.body.Jobs_Service_Mileage_Rate,
+    Jobs_Service_Mileage_Estimate: req.body.Jobs_Service_Mileage_Estimate,
+    Jobs_Service_Mileage_Cost_Estimate: req.body.Jobs_Service_Mileage_Cost_Estimate,
+    Jobs_Travel_Time: req.body.Jobs_Travel_Time,
+    Jobs_Travel_Time_Code: req.body.Jobs_Travel_Time_Code,
+    Jobs_Travel_Time_Name : req.body.Jobs_Travel_Time_Name ,
+    Jobs_Travel_Time_Rate: req.body.Jobs_Travel_Time_Rate,
+    Jobs_Travel_Time_Estimate_Cost: req.body.Jobs_Travel_Time_Estimate_Cost,
+    Jobs_Cancelation_Fee: req.body.Jobs_Cancelation_Fee,
+    Jobs_Parking_Fees: req.body.Jobs_Parking_Fees,
+    Jobs_No_Show: req.body.Jobs_No_Show,
+    Jobs_Service_Total_Estimate: req.body.Jobs_Service_Total_Estimate,
+    attachment_cust: req.body.attachment_cust,
+    outcome: req.body.outcome,
+    invoice_id: req.body.invoice_id,
   });
 
   Job_order.create(job_order, (err, data) => {

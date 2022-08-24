@@ -11,9 +11,12 @@ exports.create = (req, res) => {
 
   // Create a Invoice
   const chat_message = new Chat_message({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    chat_room_id: req.body.chat_room_id,
+    user_id: req.body.user_id,
+    message: req.body.message,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
+    
   });
 
   // Save Invoice in the database

@@ -8,9 +8,38 @@ exports.create = (req, res) => {
   }
 
   const interpreter = new Interpreter({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    int_first_name: req.body.int_first_name,
+    int_last_name: req.body.int_last_name,
+    int_company_name: req.body.int_company_name,
+    int_contact_number: req.body.int_contact_number,
+    int_phone: req.body.int_phone,
+    int_email: req.body.int_email,
+    int_language_document: req.body.int_language_document,
+    int_translation_document: req.body.int_translation_document,
+    int_translation_date: req.body.int_translation_date,
+    customer: req.body.customer,
+    int_service_requested: req.body.int_service_requested,
+    int_type_request: req.body.int_type_request,
+    int_billing_address: req.body.int_billing_address,
+    int_city_address: req.body.int_city_address,
+    int_state_address: req.body.int_state_address,
+    int_zipcode_address: req.body.int_zipcode_address,
+    int_birthday: req.body.int_birthday,
+    int_file: req.body.int_file,
+    int_po_number: req.body.int_po_number,
+    int_language_needed: req.body.int_language_needed,
+    int_hours: req.body.int_hours,
+    int_phone_2: req.body.int_phone_2,
+    int_record_claim: req.body.int_record_claim,
+    int_gender: req.body.int_gender,
+    int_notes: req.body.int_notes,
+    int_telephonic_date: req.body.int_telephonic_date,
+    int_tel_lep_name: req.body.int_tel_lep_name,
+    int_tel_lep_phone: req.body.int_tel_lep_phone,
+    int_tel_call_be: req.body.int_tel_call_be,
+    int_tel_initial: req.body.int_tel_initial,
+    int_training_date: req.body.int_training_date,
+    status: req.body.status,
   });
 
   Interpreter.create(interpreter, (err, data) => {

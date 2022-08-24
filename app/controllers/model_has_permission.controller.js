@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const model_has_permission = new Model_has_permission({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    permission_id : req.body.permission_id ,
+    model_type : req.body.model_type ,
+    model_id : req.body.model_id,
   });
 
   Model_has_permission.create(model_has_permission, (err, data) => {

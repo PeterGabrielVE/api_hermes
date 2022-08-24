@@ -9,9 +9,9 @@ exports.create = (req, res) => {
   }
 
   const chat_room = new Chat_room({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
 
   Chat_room.create(chat_room, (err, data) => {

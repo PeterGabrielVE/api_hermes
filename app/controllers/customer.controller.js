@@ -8,9 +8,30 @@ exports.create = (req, res) => {
   }
 
   const customer = new Customer({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Cus_First_Name : req.body.Cus_First_Name ,
+    Cus_Middle_Name : req.body.Cus_Middle_Name ,
+    Cus_Last_Name : req.body.Cus_Last_Name ,
+    Cus_Company_Name : req.body.Cus_Company_Name ,
+    Cus_Billing_Street_Address_1: req.body.Cus_Billing_Street_Address_1,
+    Cus_Billing_Street_Address_2: req.body.Cus_Billing_Street_Address_2,
+    Cus_Billing_City: req.body.Cus_Billing_City,
+    Cus_Billing_State: req.body.Cus_Billing_State,
+    Cus_Billing_Zip: req.body.Cus_Billing_Zip,
+    Cus_Notes: req.body.Cus_Notes,
+    Cus_Billing_Notes : req.body.Cus_Billing_Notes ,
+    Cus_Service : req.body.Cus_Service ,
+    Cus_Attachments: req.body.Cus_Attachments,
+    Cus_Billing_Term : req.body.Cus_Billing_Term ,
+    Cus_Phone_Number: req.body.Cus_Phone_Number,
+    Cus_Fax_Number: req.body.Cus_Fax_Number,
+    Cus_Phone_Other : req.body.Cus_Phone_Other ,
+    Cus_WebSite : req.body.Cus_WebSite ,
+    Cus_Email_Address : req.body.Cus_Email_Address ,
+    Cus_LL_Wiki : req.body.Cus_LL_Wiki ,
+    Cus_Status: req.body.Cus_Status,
+    Cus_Fullname: req.body.Cus_Fullname,
+    attachments: req.body.attachments, 
+    ext_customer: req.body.ext_customer, 
   });
 
   Customer.create(customer, (err, data) => {

@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const qualificatio = new Qualificatio({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    type: req.body.type,
   });
 
   Qualificatio.create(qualificatio, (err, data) => {

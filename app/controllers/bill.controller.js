@@ -11,9 +11,22 @@ exports.create = (req, res) => {
 
   // Create a Agencie
   const bill = new Bill({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    date: req.body.date,
+    job_id: req.body.job_id,
+    per_hwpm : req.body.per_hwpm,
+    hwpm : req.body.hwpm,
+    totalhwpm : req.body.totalhwpm,
+    per_mile : req.body.per_mile,
+    miles : req.body.miles,
+    totalpermiles : req.body.totalpermiles,
+    totalhwpmmiles : req.body.totalhwpmmiles,
+    totaltraveltime : req.body.totaltraveltime,
+    parkingtolls : req.body.parkingtolls,
+    cancelation : req.body.cancelation,
+    credit : req.body.credit,
+    balance : req.body.balance,
+    status : req.body.status,
+
   });
 
   // Save Agencie in the database

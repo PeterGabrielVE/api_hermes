@@ -9,9 +9,10 @@ exports.create = (req, res) => {
   }
 
   const interpreter_afiliation = new Interpreter_afiliation({
+    name: req.body.name,
+    member: req.body.member,
     title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    interpreter_id: req.body.interpreter_id,
   });
 
   Interpreter_afiliation.create(interpreter_afiliation, (err, data) => {

@@ -9,9 +9,20 @@ exports.create = (req, res) => {
   }
 
   const contacts_custome = new Contacts_custome({
+    first_name: req.body.first_name,
+    second_name: req.body.second_name,
+    last_name: req.body.last_name,
     title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    deparment: req.body.deparment,
+    telphone: req.body.telphone,
+    ext: req.body.ext,
+    email: req.body.email,
+    address: req.body.address,
+    note: req.body.note,
+    customer_id : req.body.customer_id ,
+    type_id : req.body.type_id ,
+    person_id : req.body.person_id ,
+    deleted_at: req.body.deleted_at,
   });
 
   Contacts_custome.create(contacts_custome, (err, data) => {

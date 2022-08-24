@@ -9,9 +9,12 @@ exports.create = (req, res) => {
   }
 
   const peopl = new Peopl({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    id_auto : req.body.id_auto ,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    middle_name: req.body.middle_name,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
 
   Peopl.create(peopl, (err, data) => {

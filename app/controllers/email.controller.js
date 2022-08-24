@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const email = new Email({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    email	: req.body.email	,
+    contact_id : req.body.contact_id ,
+    type_email_id: req.body.type_email_id,
   });
 
   Email.create(email, (err, data) => {

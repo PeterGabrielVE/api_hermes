@@ -8,9 +8,17 @@ exports.create = (req, res) => {
   }
 
   const receive_payment = new Receive_payment({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    amount: req.body.amount,
+    payment: req.body.payment,
+    balance: req.body.balance,
+    date: req.body.date,
+    customer_id: req.body.customer_id,
+    check_number: req.body.check_number,
+    avr_account: req.body.avr_account,
+    method: req.body.method,
+    files: req.body.files,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
   });
 
   Receive_payment.create(receive_payment, (err, data) => {

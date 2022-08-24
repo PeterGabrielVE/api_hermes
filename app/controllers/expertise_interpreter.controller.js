@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const expertise_interpreter = new Expertise_interpreter({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Expertise_interpreter.create(expertise_interpreter, (err, data) => {

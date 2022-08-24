@@ -8,9 +8,34 @@ exports.create = (req, res) => {
   }
 
   const language_service_offered = new Language_service_offered({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Language_ID : req.body.Language_ID ,
+    Service_Offered_ID : req.body.Service_Offered_ID ,
+    Interpreter_ID : req.body.Interpreter_ID ,
+    service_request_field_id : req.body.service_request_field_id ,
+    expertise_interpreters_id: req.body.expertise_interpreters_id,
+    Per_Minute: req.body.Per_Minute,
+    Per_Hour: req.body.Per_Hour,
+    Mid_Day: req.body.Mid_Day,
+    Full_Day: req.body.Full_Day,
+    Per_Mile: req.body.Per_Mile,
+    Per_Word: req.body.Per_Word,
+    Per_Page: req.body.Per_Page,
+    Per_Project: req.body.Per_Project,
+    Per_Day: req.body.Per_Day,
+    Per_Class: req.body.Per_Class,
+    Minimum: req.body.Minimum,
+    Repetition: req.body.Repetition,
+    Rush_Jobs: req.body.Rush_Jobs,
+    Rush_Per_Word: req.body.Rush_Per_Word,
+    Rush_Per_Page: req.body.Rush_Per_Page,
+    Rush_Per_Hour: req.body.Rush_Per_Hour,
+    Rush_Repetition: req.body.Rush_Repetition,
+    Rush_Minimum_Charge: req.body.Rush_Minimum_Charge,
+    Late_Cancelation: req.body.Late_Cancelation,
+    Cancelation_Hours: req.body.Cancelation_Hours,
+    Travel_Time: req.body.Travel_Time,
+    No_Show: req.body.No_Show,
+    Notes: req.body.Notes,
   });
 
   Language_service_offered.create(language_service_offered, (err, data) => {

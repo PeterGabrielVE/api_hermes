@@ -9,9 +9,9 @@ exports.create = (req, res) => {
   }
 
   const notes_interpreter = new Notes_interpreter({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Note_Date: req.body.Note_Date,
+    Note_Description: req.body.Note_Description,
+    Interpreter_ID : req.body.Interpreter_ID,
   });
 
   Notes_interpreter.create(notes_interpreter, (err, data) => {

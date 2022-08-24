@@ -9,9 +9,7 @@ exports.create = (req, res) => {
   }
 
   const job_orders_statu = new Job_orders_statu({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Job_orders_statu.create(job_orders_statu, (err, data) => {

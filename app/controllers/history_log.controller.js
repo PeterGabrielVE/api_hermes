@@ -9,9 +9,12 @@ exports.create = (req, res) => {
   }
 
   const history_log = new History_log({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    info: req.body.info,
+    created_by: req.body.created_by,
+    files: req.body.files,
+    markRead: req.body.markRead,
+    id_object: req.body.id_object,
   });
 
   History_log.create(history_log, (err, data) => {
