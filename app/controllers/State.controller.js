@@ -8,9 +8,8 @@ exports.create = (req, res) => {
   }
 
   const state = new State({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    abbreviation: req.body.abbreviation,
   });
 
   State.create(state, (err, data) => {

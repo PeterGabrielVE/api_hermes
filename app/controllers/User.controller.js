@@ -8,9 +8,16 @@ exports.create = (req, res) => {
   }
 
   const user = new User({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    email: req.body.email,
+    password: req.body.password,
+    remember_token: req.body.remember_token,
+    picture: req.body.picture,
+    person_id: req.body.person_id,
+    created_at: req.body.created_at,
+    updated_at: req.body.updated_at,
+    deleted_at: req.body.deleted_at,
+    status_term: req.body.status_term,
+    status_pass: req.body.status_pass,
   });
 
   User.create(user, (err, data) => {

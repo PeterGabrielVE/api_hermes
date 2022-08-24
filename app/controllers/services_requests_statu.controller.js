@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const services_requests_statu = new Services_requests_statu({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Services_requests_statu.create(services_requests_statu, (err, data) => {

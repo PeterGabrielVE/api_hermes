@@ -9,9 +9,7 @@ exports.create = (req, res) => {
   }
 
   const services_rates_type = new Services_rates_type({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Services_rates_type.create(services_rates_type, (err, data) => {

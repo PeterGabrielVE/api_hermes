@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const type_email = new Type_email({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
   });
 
   Type_email.create(type_email, (err, data) => {

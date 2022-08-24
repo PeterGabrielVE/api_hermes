@@ -8,9 +8,9 @@ exports.create = (req, res) => {
   }
 
   const service_estimate_jo = new Service_estimate_jo({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    service_request_id: req.body.service_request_id,
+    estimate_quote_id: req.body.estimate_quote_id,
+    job_id: req.body.job_id,
   });
 
   Service_estimate_jo.create(service_estimate_jo, (err, data) => {

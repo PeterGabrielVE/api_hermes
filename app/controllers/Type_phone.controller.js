@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const type_phone = new Type_phone({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    type: req.body.type,
   });
 
   Type_phone.create(type_phone, (err, data) => {

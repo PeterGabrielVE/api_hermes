@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   }
 
   const service_offered = new Service_offered({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    SO_Name: req.body.SO_Name,
   });
 
   Service_offered.create(service_offered, (err, data) => {

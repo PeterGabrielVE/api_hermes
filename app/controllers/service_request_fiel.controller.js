@@ -8,9 +8,8 @@ exports.create = (req, res) => {
   }
 
   const service_request_fiel = new Service_request_fiel({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    name: req.body.name,
+    status: req.body.status,
   });
 
   Service_request_fiel.create(service_request_fiel, (err, data) => {

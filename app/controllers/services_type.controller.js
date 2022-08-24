@@ -9,9 +9,9 @@ exports.create = (req, res) => {
   }
 
   const services_type = new Services_type({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    service_name: req.body.service_name,
+    service_code: req.body.service_code,
+    service_status: req.body.service_status,
   });
 
   Services_type.create(services_type, (err, data) => {

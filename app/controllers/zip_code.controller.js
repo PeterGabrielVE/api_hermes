@@ -8,9 +8,12 @@ exports.create = (req, res) => {
   }
 
   const zip_code = new Zip_code({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    zip: req.body.zip,
+    latitude: req.body.latitude,
+    longitude: req.body.longitude,
+    city: req.body.city,
+    state: req.body.state,
+    county_name: req.body.county_name,
   });
 
   Zip_code.create(zip_code, (err, data) => {

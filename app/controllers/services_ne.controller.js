@@ -8,9 +8,18 @@ exports.create = (req, res) => {
   }
 
   const services_ne = new Services_ne({
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published || false
+    Service_Name: req.body.Service_Name,
+    Service_State : req.body.Service_State ,
+    Service_Code: req.body.Service_Code,
+    Service_Rate: req.body.Service_Rate,
+    Service_Type : req.body.Service_Type ,
+    attachments: req.body.attachments,
+    customer_id : req.body.customer_id ,
+    language_id : req.body.language_id ,
+    services_offereds_id : req.body.services_offereds_id ,
+    service_request_field_id : req.body.service_request_field_id ,
+    min_hour: req.body.min_hour,
+    qualification_id : req.body.qualification_id ,
   });
 
   Services_ne.create(services_ne, (err, data) => {
