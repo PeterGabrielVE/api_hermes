@@ -1,6 +1,10 @@
 const sql = require("./db.js");
 const Phone = function(phone) {
-  this.title = phone.id;
+  
+  this.number = phone.number;
+  this.ext = phone.ext;
+  this.type = phone.type;
+  this.contactcustomer_id  = phone.contactcustomer_id ;
 };
 
 Phone.create = (newPhone, result) => {

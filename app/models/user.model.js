@@ -1,6 +1,16 @@
 const sql = require("./db.js");
 const User = function(user) {
-  this.title = user.id;
+
+    this.email= user.email;
+    this.password= user.password;
+    this.remember_token= user.remember_token;
+    this.picture= user.picture;
+    this.person_id= user.person_id;
+    this.created_at= user.created_at;
+    this.updated_at= user.updated_at;
+    this.deleted_at= user.deleted_at;
+    this.status_term= user.status_term;
+    this.status_pass= user.status_pass;
 };
 
 User.create = (newUser, result) => {

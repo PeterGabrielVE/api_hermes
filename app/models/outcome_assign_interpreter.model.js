@@ -1,6 +1,10 @@
 const sql = require("./db.js");
 const Outcome_assign_interpreter = function(outcome_assign_interpreter) {
-  this.title = outcome_assign_interpreter.id;
+
+  this.interpreter_id  = outcome_assign_interpreter.interpreter_id ;
+  this.jobs_id  = outcome_assign_interpreter.jobs_id ;
+  this.outcome_id  = outcome_assign_interpreter.outcome_id ;
+  this.notes = outcome_assign_interpreter.notes;
 };
 
 Outcome_assign_interpreter.create = (newOutcome_assign_interpreter, result) => {

@@ -1,6 +1,7 @@
 const sql = require("./db.js");
 const Role_use = function(role_use) {
-  this.title = role_use.id;
+  this.role_id = role_use.role_id;
+  this.user_id = role_use.user_id;
 };
 
 Role_use.create = (newRole_use, result) => {

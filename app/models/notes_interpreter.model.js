@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Notes_interpreter = function(notes_interpreter) {
-  this.title = notes_interpreter.id;
+  this.Note_Date = notes_interpreter.Note_Date;
+  this.Note_Description = notes_interpreter.Note_Description;
+  this.Interpreter_ID  = notes_interpreter.Interpreter_ID ;
 };
 
 Notes_interpreter.create = (newNotes_interpreter, result) => {

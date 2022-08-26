@@ -1,6 +1,11 @@
 const sql = require("./db.js");
 const Role = function(role) {
-  this.title = role.id;
+
+  this.name = role.name;
+  this.description = role.description;
+  this.guard_name = role.guard_name;
+  this.created_at = role.created_at;
+  this.updated_at = role.updated_at;
 };
 
 Role.create = (newRole, result) => {

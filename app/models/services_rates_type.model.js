@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Services_rates_type = function(services_rates_type) {
-  this.title = services_rates_type.id;
+  this.name = services_rates_type.name;
 };
 
 Services_rates_type.create = (newServices_rates_type, result) => {

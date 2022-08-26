@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Type_phone = function(type_phone) {
-  this.title = type_phone.id;
+  this.type = type_phone.type;
 };
 
 Type_phone.create = (newType_phone, result) => {

@@ -2,7 +2,12 @@ const sql = require("./db.js");
 
 // constructor
 const Chat_message = function(chat_message) {
-  this.title = chat_message.id;
+  
+  this.chat_room_id = chat_message.chat_room_id;
+  this.user_id = chat_message.user_id;
+  this.message = chat_message.message;
+  this.created_at = chat_message.created_at;
+  this.updated_at = chat_message.updated_at;
 };
 
 Chat_message.create = (newChat_message, result) => {

@@ -1,6 +1,15 @@
 const sql = require("./db.js");
 const Employee = function(employee) {
-  this.title = employee.id;
+  this.person_id = employee.person_id;
+  this.state = employee.state;
+  this.city = employee.city;
+  this.zip = employee.zip;
+  this.main_email = employee.main_email;
+  this.main_telephone = employee.main_telephone;
+  this.Address = employee.Address;
+  this.county = employee.county;
+  this.apt_suite = employee.apt_suite;
+
 };
 
 Employee.create = (newEmployee, result) => {

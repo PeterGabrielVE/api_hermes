@@ -2,7 +2,23 @@ const sql = require("./db.js");
 
 // constructor
 const Bill = function(Bill) {
-  this.title = Bill.id;
+
+  this.date= bill.date;
+  this.job_id= bill.job_id;
+  this.per_hwpm = bill.per_hwpm;
+  this.hwpm = bill.hwpm;
+  this.totalhwpm = bill.totalhwpm;
+  this.per_mile = bill.per_mile;
+  this.miles = bill.miles;
+  this.totalpermiles = bill.totalpermiles;
+  this.totalhwpmmiles = bill.totalhwpmmiles;
+  this.totaltraveltime = bill.totaltraveltime;
+  this.parkingtolls = bill.parkingtolls;
+  this.cancelation = bill.cancelation;
+  this.credit = bill.credit;
+  this.balance = bill.balance;
+  this.status = bill.status;
+
 };
 
 Bill.create = (newBill, result) => {

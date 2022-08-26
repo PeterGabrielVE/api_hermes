@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Language = function(language) {
-  this.title = language.id;
+  this.language = language.language;
 };
 
 Language.create = (newLanguage, result) => {

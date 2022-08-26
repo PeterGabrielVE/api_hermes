@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Job_orders_statu = function(job_orders_statu) {
-  this.title = job_orders_statu.id;
+  this.name = job_orders_statu.name;
 };
 
 Job_orders_statu.create = (newJob_orders_statu, result) => {

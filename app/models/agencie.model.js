@@ -2,7 +2,8 @@ const sql = require("./db.js");
 
 // constructor
 const Agencie = function(Agencie) {
-  this.title = Agencie.id;
+  this.contractors_id  = Agencie.contractors_id ;
+  this.name  = Agencie.name ;
 };
 
 Agencie.create = (newAgencie, result) => {

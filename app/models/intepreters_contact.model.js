@@ -1,6 +1,13 @@
 const sql = require("./db.js");
 const Intepreters_contact = function(intepreters_contact) {
-  this.title = intepreters_contact.id;
+  
+  this.title = intepreters_contact.title;
+  this.deparment = intepreters_contact.deparment;
+  this.name = intepreters_contact.name;
+  this.phone_ext = intepreters_contact.phone_ext;
+  this.phone_number = intepreters_contact.phone_number;
+  this.email = intepreters_contact.email;
+  this.interpreter_id  = intepreters_contact.interpreter_id ;
 };
 
 Intepreters_contact.create = (newIntepreters_contact, result) => {

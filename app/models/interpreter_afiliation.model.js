@@ -1,6 +1,10 @@
 const sql = require("./db.js");
 const Interpreter_afiliation = function(interpreter_afiliation) {
-  this.title = interpreter_afiliation.id;
+
+  this.name = interpreter_afiliation.name;
+  this.member = interpreter_afiliation.member;
+  this.title = interpreter_afiliation.title;
+  this.interpreter_id = interpreter_afiliation.interpreter_id;
 };
 
 Interpreter_afiliation.create = (newInterpreter_afiliation, result) => {

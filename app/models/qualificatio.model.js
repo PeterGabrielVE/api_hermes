@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Qualificatio = function(qualificatio) {
-  this.title = qualificatio.id;
+  this.type = qualificatio.type;
 };
 
 Qualificatio.create = (newQualificatio, result) => {

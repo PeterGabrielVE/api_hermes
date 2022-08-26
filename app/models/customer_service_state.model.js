@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Customer_service_state = function(customer_service_state) {
-  this.title = customer_service_state.id;
+  this.customer_id = customer_service_state.customer_id;
+  this.state_id = customer_service_state.state_id;
+  this.service_id = customer_service_state.service_id;
 };
 
 Customer_service_state.create = (newCustomer_service_state, result) => {

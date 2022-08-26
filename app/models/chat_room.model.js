@@ -1,6 +1,9 @@
 const sql = require("./db.js");
 const Chat_room = function(chat_room) {
-  this.title = chat_room.id;
+  this.name = chat_room.name;
+  this.created_at = chat_room.created_at;
+  this.updated_at = chat_room.updated_at;
+  
 };
 
 Chat_room.create = (newChat_room, result) => {

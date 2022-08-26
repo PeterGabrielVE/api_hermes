@@ -1,6 +1,10 @@
 const sql = require("./db.js");
 const Interpreter_certification_state = function(interpreter_certification_state) {
-  this.title = interpreter_certification_state.id;
+  
+  this.interpreter_id  = interpreter_certification_state.interpreter_id ;
+  this.interpreter_certifications_id  = interpreter_certification_state.interpreter_certifications_id ;
+  this.state_id  = interpreter_certification_state.state_id ;
+  
 };
 
 Interpreter_certification_state.create = (newInterpreter_certification_state, result) => {

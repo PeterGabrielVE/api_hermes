@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Services_requests_statu = function(services_requests_statu) {
-  this.title = services_requests_statu.id;
+  this.name = services_requests_statu.name;
 };
 
 Services_requests_statu.create = (newServices_requests_statu, result) => {

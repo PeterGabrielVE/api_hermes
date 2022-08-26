@@ -1,6 +1,17 @@
 const sql = require("./db.js");
 const Interpreters_dba = function(interpreters_dba) {
-  this.title = interpreters_dba.id;
+  
+  this.contractors_id  = interpreters_dba.contractors_id ;
+  this.person_id  = interpreters_dba.person_id ;
+  this.dba = interpreters_dba.dba;
+  this.birthdate = interpreters_dba.birthdate;
+  this.gender = interpreters_dba.gender;
+  this.education_Degree = interpreters_dba.education_Degree;
+  this.years_school = interpreters_dba.years_school;
+  this.initial = interpreters_dba.initial;
+  this.training_Certifications = interpreters_dba.training_Certifications;
+  this.agency_Currently_Working = interpreters_dba.agency_Currently_Working;
+  this.prefix = interpreters_dba.prefix;
 };
 
 Interpreters_dba.create = (newInterpreters_dba, result) => {

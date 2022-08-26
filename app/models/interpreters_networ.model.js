@@ -1,6 +1,31 @@
 const sql = require("./db.js");
 const Interpreters_networ = function(interpreters_networ) {
-  this.title = interpreters_networ.id;
+
+  this.int_prefix= interpreters_networ.int_prefix;
+  this.int_first_name= interpreters_networ.int_first_name;
+  this.int_last_name= interpreters_networ.int_last_name;
+  this.int_gender= interpreters_networ.int_gender;
+  this.int_age= interpreters_networ.int_age;
+  this.int_address= interpreters_networ.int_address;
+  this.int_home_phone= interpreters_networ.int_home_phone;
+  this.int_phone_ext= interpreters_networ.int_phone_ext;
+  this.int_fax= interpreters_networ.int_fax;
+  this.int_email_address= interpreters_networ.int_email_address;
+  this.int_primary_language= interpreters_networ.int_primary_language;
+  this.int_other_language= interpreters_networ.int_other_language;
+  this.int_year_school= interpreters_networ.int_year_school;
+  this.int_high_education= interpreters_networ.int_high_education;
+  this.int_training_before= interpreters_networ.int_training_before;
+  this.int_last_year= interpreters_networ.int_last_year;
+  this.int_org_training= interpreters_networ.int_org_training;
+  this.int_experience_interpreting= interpreters_networ.int_experience_interpreting;
+  this.int_resumen= interpreters_networ.int_resumen;
+  this.int_notes= interpreters_networ.int_notes;
+  this.int_type= interpreters_networ.int_type;
+  this.int_status= interpreters_networ.int_status;
+  this.int_certificate= interpreters_networ.int_certificate;
+  this.int_time_contact= interpreters_networ.int_time_contact;
+  this.int_service_off= interpreters_networ.int_service_off;
 };
 
 Interpreters_networ.create = (newInterpreters_networ, result) => {

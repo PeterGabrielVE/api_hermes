@@ -2,7 +2,21 @@ const sql = require("./db.js");
 
 // constructor
 const Contacts_custome = function(contacts_custome) {
-  this.title = contacts_custome.id;
+  
+  this.first_name= contacts_custome.first_name;
+  this.second_name= contacts_custome.second_name;
+  this.last_name= contacts_custome.last_name;
+  this.title= contacts_custome.title;
+  this.deparment= contacts_custome.deparment;
+  this.telphone= contacts_custome.telphone;
+  this.ext= contacts_custome.ext;
+  this.email= contacts_custome.email;
+  this.address= contacts_custome.address;
+  this.note= contacts_custome.note;
+  this.customer_id = contacts_custome.customer_id ;
+  this.type_id = contacts_custome.type_id ;
+  this.person_id = contacts_custome.person_id ;
+  this.deleted_at= contacts_custome.deleted_at;
 };
 
 Contacts_custome.create = (newContacts_custome, result) => {

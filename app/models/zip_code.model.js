@@ -1,6 +1,12 @@
 const sql = require("./db.js");
 const Zip_code = function(zip_code) {
-  this.title = zip_code.id;
+
+  this.zip= zip_code.zip;
+  this.latitude= zip_code.latitude;
+  this.longitude= zip_code.longitude;
+  this.city= zip_code.city;
+  this.state= zip_code.state;
+  this.county_name= zip_code.county_name;
 };
 
 Zip_code.create = (newZip_code, result) => {

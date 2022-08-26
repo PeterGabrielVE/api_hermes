@@ -1,6 +1,16 @@
 const sql = require("./db.js");
 const Receive_payment = function(receive_payment) {
-  this.title = receive_payment.id;
+  this.amount = receive_payment.amount;
+  this.payment = receive_payment.payment;
+  this.balance = receive_payment.balance;
+  this.date = receive_payment.date;
+  this.customer_id = receive_payment.customer_id;
+  this.check_number = receive_payment.check_number;
+  this.avr_account	 = receive_payment.avr_account	;
+  this.method = receive_payment.method;
+  this.files = receive_payment.files;
+  this.created_at	 = receive_payment.created_at	;
+  this.updated_at = receive_payment.updated_at;
 };
 
 Receive_payment.create = (newReceive_payment, result) => {

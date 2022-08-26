@@ -1,6 +1,9 @@
 const sql = require("./db.js");
 const Permission = function(permission) {
-  this.title = permission.id;
+  this.name = permission.name;
+  this.guard_name = permission.guard_name;
+  this.created_at = permission.created_at;
+  this.updated_at = permission.updated_at;
 };
 
 Permission.create = (newPermission, result) => {

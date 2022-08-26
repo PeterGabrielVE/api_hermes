@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Model_has_permission = function(model_has_permission) {
-  this.title = model_has_permission.id;
+  this.permission_id  = model_has_permission.permission_id ;
+  this.model_type = model_has_permission.model_type;
+  this.model_id  = model_has_permission.model_id ;
 };
 
 Model_has_permission.create = (newModel_has_permission, result) => {

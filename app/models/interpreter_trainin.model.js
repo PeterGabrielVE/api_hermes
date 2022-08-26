@@ -1,6 +1,12 @@
 const sql = require("./db.js");
 const Interpreter_trainin = function(interpreter_trainin) {
-  this.title = interpreter_trainin.id;
+  this.name = interpreter_trainin.name;
+  this.last_name = interpreter_trainin.last_name;
+  this.phone_number = interpreter_trainin.phone_number;
+  this.email	 = interpreter_trainin.email	;
+  this.date_enroll = interpreter_trainin.date_enroll;
+  this.updated_at = interpreter_trainin.updated_at;
+  this.created_at = interpreter_trainin.created_at;
 };
 
 Interpreter_trainin.create = (newInterpreter_trainin, result) => {

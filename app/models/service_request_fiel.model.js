@@ -1,6 +1,7 @@
 const sql = require("./db.js");
 const Service_request_fiel = function(service_request_fiel) {
-  this.title = service_request_fiel.id;
+  this.name = service_request_fiel.name;
+  this.status = service_request_fiel.status;
 };
 
 Service_request_fiel.create = (newService_request_fiel, result) => {

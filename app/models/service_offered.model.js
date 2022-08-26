@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Service_offered = function(service_offered) {
-  this.title = service_offered.id;
+  this.SO_Name = service_offered.SO_Name;
 };
 
 Service_offered.create = (newService_offered, result) => {

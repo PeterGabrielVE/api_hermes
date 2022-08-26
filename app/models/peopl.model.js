@@ -1,6 +1,12 @@
 const sql = require("./db.js");
 const Peopl = function(peopl) {
-  this.title = peopl.id;
+
+  this.id_auto  = peopl.id_auto ;
+  this.first_name = peopl.first_name;
+  this.last_name = peopl.last_name;
+  this.middle_name = peopl.middle_name;
+  this.created_at = peopl.created_at;
+  this.updated_at = peopl.updated_at;
 };
 
 Peopl.create = (newPeopl, result) => {

@@ -1,6 +1,26 @@
 const sql = require("./db.js");
 const Receive_assignmen = function(receive_assignmen) {
-  this.title = receive_assignmen.id;
+
+  this.jobs_id = receive_assignmen.jobs_id ;
+  this.date_receive= receive_assignmen.date_receive;
+  this.start_date= receive_assignmen.start_date;
+  this.start_hour= receive_assignmen.start_hour;
+  this.end_date= receive_assignmen.end_date;
+  this.end_hour= receive_assignmen.end_hour;
+  this.total_encounter_hours= receive_assignmen.total_encounter_hours;
+  this.total_encounter_minutes= receive_assignmen.total_encounter_minutes;
+  this.total_encounter_pages= receive_assignmen.total_encounter_pages;
+  this.total_encounter_words= receive_assignmen.total_encounter_words;
+  this.total_encounter_days= receive_assignmen.total_encounter_days;
+  this.total_encounter_classes= receive_assignmen.total_encounter_classes;
+  this.parking_tolls	= receive_assignmen.parking_tolls	;
+  this.rate_mileage= receive_assignmen.rate_mileage;
+  this.miles= receive_assignmen.miles;
+  this.total_mileage= receive_assignmen.total_mileage;
+  this.attachment_parking_tolls= receive_assignmen.attachment_parking_tolls;
+  this.attachment_form= receive_assignmen.attachment_form;
+  this.reported_problem= receive_assignmen.reported_problem;
+  this.outcome= receive_assignmen.outcome;
 };
 
 Receive_assignmen.create = (newReceive_assignmen, result) => {

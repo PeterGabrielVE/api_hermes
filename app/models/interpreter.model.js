@@ -1,6 +1,38 @@
 const sql = require("./db.js");
 const Interpreter= function(interpreter) {
-  this.title = interpreter.id;
+
+  this.int_first_name= interpreter.int_first_name;
+  this.int_last_name= interpreter.int_last_name;
+  this.int_company_name= interpreter.int_company_name;
+  this.int_contact_number= interpreter.int_contact_number;
+  this.int_phone= interpreter.int_phone;
+  this.int_email= interpreter.int_email;
+  this.int_language_document= interpreter.int_language_document;
+  this.int_translation_document= interpreter.int_translation_document;
+  this.int_translation_date= interpreter.int_translation_date;
+  this.customer= interpreter.customer;
+  this.int_service_requested= interpreter.int_service_requested;
+  this.int_type_request= interpreter.int_type_request;
+  this.int_billing_address= interpreter.int_billing_address;
+  this.int_city_address= interpreter.int_city_address;
+  this.int_state_address= interpreter.int_state_address;
+  this.int_zipcode_address= interpreter.int_zipcode_address;
+  this.int_birthday= interpreter.int_birthday;
+  this.int_file= interpreter.int_file;
+  this.int_po_number= interpreter.int_po_number;
+  this.int_language_needed= interpreter.int_language_needed;
+  this.int_hours= interpreter.int_hours;
+  this.int_phone_2= interpreter.int_phone_2;
+  this.int_record_claim= interpreter.int_record_claim;
+  this.int_gender= interpreter.int_gender;
+  this.int_notes= interpreter.int_notes;
+  this.int_telephonic_date= interpreter.int_telephonic_date;
+  this.int_tel_lep_name= interpreter.int_tel_lep_name;
+  this.int_tel_lep_phone= interpreter.int_tel_lep_phone;
+  this.int_tel_call_be= interpreter.int_tel_call_be;
+  this.int_tel_initial= interpreter.int_tel_initial;
+  this.int_training_date= interpreter.int_training_date;
+  this.status= interpreter.status;
 };
 
 Interpreter.create = (newInterpreter, result) => {

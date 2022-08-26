@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Email = function(email) {
-  this.title = email.id;
+  this.email = email.email;
+  this.contact_id  = email.contact_id ;
+  this.type_email_id = email.type_email_id;
 };
 
 Email.create = (newEmail, result) => {

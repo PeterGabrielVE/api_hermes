@@ -1,6 +1,7 @@
 const sql = require("./db.js");
 const State = function(state) {
-  this.title = state.id;
+  this.name = state.name;
+  this.abbreviation = state.abbreviation;
 };
 
 State.create = (newState, result) => {

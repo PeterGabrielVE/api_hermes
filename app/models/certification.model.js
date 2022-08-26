@@ -2,7 +2,7 @@ const sql = require("./db.js");
 
 // constructor
 const Certification = function(certification) {
-  this.title = certification.id;
+  this.name = certification.name;
 };
 
 Certification.create = (newCertification, result) => {

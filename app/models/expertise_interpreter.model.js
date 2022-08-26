@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Expertise_interpreter = function(expertise_interpreter) {
-  this.title = expertise_interpreter.id;
+  this.name = expertise_interpreter.name;
 };
 
 Expertise_interpreter.create = (newExpertise_interpreter, result) => {

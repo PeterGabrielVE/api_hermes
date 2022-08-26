@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Receive_payment_invoic = function(receive_payment_invoic) {
-  this.title = receive_payment_invoic.id;
+
+  this.invoice_id = receive_payment_invoic.invoice_id;
+  this.receive_id	 = receive_payment_invoic.receive_id	;
 };
 
 Receive_payment_invoic.create = (newReceive_payment_invoic, result) => {

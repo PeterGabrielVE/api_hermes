@@ -2,7 +2,7 @@ const sql = require("./db.js");
 
 // constructor
 const Assignments_statu = function(Assignments_statu) {
-  this.title = 	Assignments_statu.id;
+  this.name = Assignments_statu.name;
 };
 
 Assignments_statu.create = (newAssignments_statu, result) => {

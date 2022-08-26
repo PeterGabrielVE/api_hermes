@@ -1,6 +1,12 @@
 const sql = require("./db.js");
 const History_log = function(history_log) {
-  this.title = history_log.id;
+  this.name = history_log.name;
+  this.info = history_log.info;
+  this.created_at = history_log.created_at;
+  this.created_by = history_log.created_by;
+  this.files = history_log.files;
+  this.markRead = history_log.markRead;
+  this.id_object = history_log.id_object;
 };
 
 History_log.create = (newHistory_log, result) => {

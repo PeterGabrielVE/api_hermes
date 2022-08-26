@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Password_reset = function(password_reset) {
-  this.title = password_reset.id;
+  this.email = password_reset.email;
+  this.token = password_reset.token;
+  this.created_at = password_reset.created_at;
 };
 
 Password_reset.create = (newPassword_reset, result) => {

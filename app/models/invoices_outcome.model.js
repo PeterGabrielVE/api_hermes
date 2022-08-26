@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 const Invoices_outcome = function(invoices_outcome) {
-  this.title = invoices_outcome.id;
+  this.name = invoices_outcome.name;
 };
 
 Invoices_outcome.create = (newInvoices_outcome, result) => {

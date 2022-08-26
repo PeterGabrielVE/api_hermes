@@ -1,6 +1,32 @@
 const sql = require("./db.js");
 const Job_order = function(job_order) {
-  this.title = job_order.id;
+
+  this.jobs_id = job_order.jobs_id ;
+  this.Jobs_Status= job_order.Jobs_Status;
+  this.customers_id = job_order.customers_id ;
+  this.Jobs_Customers_Company= job_order.Jobs_Customers_Company;
+  this.Jobs_Service_Name = job_order.Jobs_Service_Name ;
+  this.Jobs_Service_Code= job_order.Jobs_Service_Code;
+  this.Jobs_Service_Name_Rate= job_order.Jobs_Service_Name_Rate;
+  this.Jobs_Service_Hours_Estimate= job_order.Jobs_Service_Hours_Estimate;
+  this.Jobs_Service_Hours_Estimate_Cost= job_order.Jobs_Service_Hours_Estimate_Cost;
+  this.Jobs_Service_Mileage_Code= job_order.Jobs_Service_Mileage_Code;
+  this.Jobs_Service_Mileage_Name = job_order.Jobs_Service_Mileage_Name ;
+  this.Jobs_Service_Mileage_Rate= job_order.Jobs_Service_Mileage_Rate;
+  this.Jobs_Service_Mileage_Estimate= job_order.Jobs_Service_Mileage_Estimate;
+  this.Jobs_Service_Mileage_Cost_Estimate= job_order.Jobs_Service_Mileage_Cost_Estimate;
+  this.Jobs_Travel_Time= job_order.Jobs_Travel_Time;
+  this.Jobs_Travel_Time_Code= job_order.Jobs_Travel_Time_Code;
+  this.Jobs_Travel_Time_Name = job_order.Jobs_Travel_Time_Name ;
+  this.Jobs_Travel_Time_Rate= job_order.Jobs_Travel_Time_Rate;
+  this.Jobs_Travel_Time_Estimate_Cost= job_order.Jobs_Travel_Time_Estimate_Cost;
+  this.Jobs_Cancelation_Fee= job_order.Jobs_Cancelation_Fee;
+  this.Jobs_Parking_Fees= job_order.Jobs_Parking_Fees;
+  this.Jobs_No_Show= job_order.Jobs_No_Show;
+  this.Jobs_Service_Total_Estimate= job_order.Jobs_Service_Total_Estimate;
+  this.attachment_cust= job_order.attachment_cust;
+  this.outcome= job_order.outcome;
+  this.invoice_id= job_order.invoice_id;
 };
 
 Job_order.create = (newJob_order, result) => {

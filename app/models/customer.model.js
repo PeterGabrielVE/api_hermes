@@ -1,6 +1,30 @@
 const sql = require("./db.js");
 const Customer = function(customer) {
-  this.title = customer.id;
+ 
+  this.Cus_First_Name = customer.Cus_First_Name ;
+  this.Cus_Middle_Name = customer.Cus_Middle_Name ;
+  this.Cus_Last_Name = customer.Cus_Last_Name ;
+  this.Cus_Company_Name = customer.Cus_Company_Name ;
+  this.Cus_Billing_Street_Address_1= customer.Cus_Billing_Street_Address_1;
+  this.Cus_Billing_Street_Address_2= customer.Cus_Billing_Street_Address_2;
+  this.Cus_Billing_City= customer.Cus_Billing_City;
+  this.Cus_Billing_State= customer.Cus_Billing_State;
+  this.Cus_Billing_Zip= customer.Cus_Billing_Zip;
+  this.Cus_Notes= customer.Cus_Notes;
+  this.Cus_Billing_Notes = customer.Cus_Billing_Notes ;
+  this.Cus_Service = customer.Cus_Service ;
+  this.Cus_Attachments= customer.Cus_Attachments;
+  this.Cus_Billing_Term = customer.Cus_Billing_Term ;
+  this.Cus_Phone_Number= customer.Cus_Phone_Number;
+  this.Cus_Fax_Number= customer.Cus_Fax_Number;
+  this.Cus_Phone_Other = customer.Cus_Phone_Other ;
+  this.Cus_WebSite = customer.Cus_WebSite ;
+  this.Cus_Email_Address = customer.Cus_Email_Address ;
+  this.Cus_LL_Wiki = customer.Cus_LL_Wiki ;
+  this.Cus_Status= customer.Cus_Status;
+  this.Cus_Fullname= customer.Cus_Fullname;
+  this.attachments= customer.attachments; 
+  this.ext_customer= customer.ext_customer; 
 };
 
 Customer.create = (newCustomer, result) => {

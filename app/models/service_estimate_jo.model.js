@@ -1,6 +1,8 @@
 const sql = require("./db.js");
 const Service_estimate_jo = function(service_estimate_jo) {
-  this.title = service_estimate_jo.id;
+  this.service_request_id = service_estimate_jo.service_request_id;
+  this.estimate_quote_id = service_estimate_jo.estimate_quote_id;
+  this.job_id = service_estimate_jo.job_id;
 };
 
 Service_estimate_jo.create = (newService_estimate_jo, result) => {
