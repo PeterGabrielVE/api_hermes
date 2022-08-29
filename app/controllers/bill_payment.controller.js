@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     date_receive: req.body.date_receive,
     bills_list: req.body.bills_list,
     assignments_list: req.body.assignments_list,
-    interpreter_id : req.body.interpreter_id ,
+    interpreter_id : req.body.interpreter_id,
     payment_method: req.body.payment_method,
     date_Payment: req.body.date_Payment,
     transaction_number: req.body.transaction_number,

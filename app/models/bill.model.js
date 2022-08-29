@@ -3,26 +3,26 @@ const sql = require("./db.js");
 // constructor
 const Bill = function(Bill) {
 
-  this.date= bill.date;
-  this.job_id= bill.job_id;
-  this.per_hwpm = bill.per_hwpm;
-  this.hwpm = bill.hwpm;
-  this.totalhwpm = bill.totalhwpm;
-  this.per_mile = bill.per_mile;
-  this.miles = bill.miles;
-  this.totalpermiles = bill.totalpermiles;
-  this.totalhwpmmiles = bill.totalhwpmmiles;
-  this.totaltraveltime = bill.totaltraveltime;
-  this.parkingtolls = bill.parkingtolls;
-  this.cancelation = bill.cancelation;
-  this.credit = bill.credit;
-  this.balance = bill.balance;
-  this.status = bill.status;
-
+  this.date = Bill.date;
+  this.job_id = Bill.job_id;
+  this.interpreter_id  = Bill.interpreter_id ;
+  this.per_hwpm = Bill.per_hwpm;
+  this.hwpm = Bill.hwpm;
+  this.totalhwpm = Bill.totalhwpm;
+  this.per_mile = Bill.per_mile;
+  this.miles = Bill.miles;
+  this.totalpermiles = Bill.totalpermiles;
+  this.totalhwpmmiles = Bill.totalhwpmmiles;
+  this.totaltraveltime = Bill.totaltraveltime;
+  this.parkingtolls = Bill.parkingtolls;
+  this.cancelation = Bill.cancelation;
+  this.credit = Bill.credit;
+  this.balance = Bill.balance;
+  this.status = Bill.status;
 };
 
 Bill.create = (newBill, result) => {
-  sql.query("INSERT INTO Bill SET ?", newBill, (err, res) => {
+  sql.query("INSERT INTO Bills SET ?", newBill, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

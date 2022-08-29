@@ -13,6 +13,7 @@ exports.create = (req, res) => {
   const bill = new Bill({
     date: req.body.date,
     job_id: req.body.job_id,
+    interpreter_id : req.body.interpreter_id ,
     per_hwpm : req.body.per_hwpm,
     hwpm : req.body.hwpm,
     totalhwpm : req.body.totalhwpm,

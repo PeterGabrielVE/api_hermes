@@ -11,12 +11,12 @@ exports.create = (req, res) => {
 
   // Create a 
   const assignment = new Assignment({
-    jobs_id : req.body.jobs_id ,
-    Jobs_Status : req.body.Jobs_Status ,
-    contractors_id : req.body.contractors_id ,
-    contractors_First_Name : req.body.contractors_First_Name ,
-    contractors_Last_Name : req.body.contractors_Last_Name ,
-    contractors_Con_Agency_Name : req.body.contractors_Con_Agency_Name ,
+    jobs_id : req.body.jobs_id,
+    Jobs_Status : req.body.Jobs_Status,
+    contractors_id : req.body.contractors_id,
+    contractors_First_Name : req.body.contractors_First_Name,
+    contractors_Last_Name : req.body.contractors_Last_Name,
+    contractors_Con_Agency_Name : req.body.contractors_Con_Agency_Name,
     contractors_Home_Phone : req.body.contractors_Home_Phone ,
     contractors_Cell_Phone : req.body.contractors_Cell_Phone ,
     contractors_Email : req.body.contractors_Email ,

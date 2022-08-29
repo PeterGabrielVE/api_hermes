@@ -3,20 +3,20 @@ const sql = require("./db.js");
 // constructor
 const Bill_payment = function(Bill_payment) {
   
-    this.status= bill_payment.status;
-    this.date_receive= bill_payment.date_receive;
-    this.bills_list= bill_payment.bills_list;
-    this.assignments_list= bill_payment.assignments_list;
-    this.interpreter_id = bill_payment.interpreter_id ;
-    this.payment_method= bill_payment.payment_method;
-    this.date_Payment= bill_payment.date_Payment;
-    this.transaction_number= bill_payment.transaction_number;
-    this.check_number= bill_payment.check_number;
-    this.attachment= bill_payment.attachment;
-    this.payment_total= bill_payment.payment_total;
-    this.account= bill_payment.account;
-    this.check_payment_date= bill_payment.check_payment_date;
-    this.attachment_Check_Trans= bill_payment.attachment_Check_Trans;
+    this.status = Bill_payment.status;
+    this.date_receive = Bill_payment.date_receive;
+    this.bills_list = Bill_payment.bills_list;
+    this.assignments_list = Bill_payment.assignments_list;
+    this.interpreter_id = Bill_payment.interpreter_id ;
+    this.payment_method = Bill_payment.payment_method;
+    this.date_Payment = Bill_payment.date_Payment;
+    this.transaction_number = Bill_payment.transaction_number;
+    this.check_number = Bill_payment.check_number;
+    this.attachment = Bill_payment.attachment;
+    this.payment_total = Bill_payment.payment_total;
+    this.account = Bill_payment.account;
+    this.check_payment_date = Bill_payment.check_payment_date;
+    this.attachment_Check_Trans = Bill_payment.attachment_Check_Trans;
 };
 
 Bill_payment.create = (newBill_payment, result) => {
