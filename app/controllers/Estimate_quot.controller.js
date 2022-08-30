@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     job_id: req.body.job_id,
     service_email: req.body.service_email,
     service_avb_yes: req.body.service_avb_yes,
-    service_avb_yes: req.body.service_avb_yes,
+    service_avb_no: req.body.service_avb_no,
     service_avb_nvr: req.body.service_avb_nvr,
     service_request_status : req.body.service_request_status ,
     service_name : req.body.service_name ,

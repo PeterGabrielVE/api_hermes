@@ -1,7 +1,8 @@
 const sql = require("./db.js");
 const Peopl = function(peopl) {
 
-  this.id_auto  = peopl.id_auto ;
+  this.id_auto = peopl.id_auto;
+  this.id = peopl.id;
   this.first_name = peopl.first_name;
   this.last_name = peopl.last_name;
   this.middle_name = peopl.middle_name;
@@ -10,7 +11,7 @@ const Peopl = function(peopl) {
 };
 
 Peopl.create = (newPeopl, result) => {
-  sql.query("INSERT INTO Peopls SET ?", newPeopl, (err, res) => {
+  sql.query("INSERT INTO People SET ?", newPeopl, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);

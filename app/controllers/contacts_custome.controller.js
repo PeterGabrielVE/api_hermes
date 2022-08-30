@@ -19,8 +19,8 @@ exports.create = (req, res) => {
     email: req.body.email,
     address: req.body.address,
     note: req.body.note,
-    customer_id : req.body.customer_id ,
-    type_id : req.body.type_id ,
+    customer_id : req.body.customer_id,
+    type_id : req.body.type_id,
     person_id : req.body.person_id ,
     deleted_at: req.body.deleted_at,
   });

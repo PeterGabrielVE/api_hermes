@@ -1,10 +1,10 @@
 const sql = require("./db.js");
-const Outcome_assign_interpreter = function(outcome_assign_interpreter) {
+const Outcome_assign_interpreter = function(Outcome_assign_interpreter) {
 
-  this.interpreter_id  = outcome_assign_interpreter.interpreter_id ;
-  this.jobs_id  = outcome_assign_interpreter.jobs_id ;
-  this.outcome_id  = outcome_assign_interpreter.outcome_id ;
-  this.notes = outcome_assign_interpreter.notes;
+  this.interpreter_id  = Outcome_assign_interpreter.interpreter_id;
+  this.jobs_id  = Outcome_assign_interpreter.jobs_id;
+  this.outcome_id  = Outcome_assign_interpreter.outcome_id;
+  this.notes = Outcome_assign_interpreter.notes;
 };
 
 Outcome_assign_interpreter.create = (newOutcome_assign_interpreter, result) => {
@@ -21,7 +21,7 @@ Outcome_assign_interpreter.create = (newOutcome_assign_interpreter, result) => {
 };
 
 Outcome_assign_interpreter.findById = (id, result) => {
-  sql.query(`SELECT * FROM outcome_assign_interpreters WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM Outcome_assign_interpreters WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -39,7 +39,7 @@ Outcome_assign_interpreter.findById = (id, result) => {
 };
 
 Outcome_assign_interpreter.getAll = (title, result) => {
-  let query = "SELECT * FROM outcome_assign_interpreters";
+  let query = "SELECT * FROM Outcome_assign_interpreters";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -58,7 +58,7 @@ Outcome_assign_interpreter.getAll = (title, result) => {
 };
 
 Outcome_assign_interpreter.getAllPublished = result => {
-  sql.query("SELECT * FROM outcome_assign_interpreters", (err, res) => {
+  sql.query("SELECT * FROM Outcome_assign_interpreters", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -86,8 +86,8 @@ Outcome_assign_interpreter.updateById = (id, Outcome_assign_interpreter, result)
         return;
       }
 
-      console.log("updated Outcome_assign_interpreter: ", { id: id, ...outcome_assign_interpreter });
-      result(null, { id: id, ...outcome_assign_interpreter });
+      console.log("updated Outcome_assign_interpreter: ", { id: id, ...Outcome_assign_interpreter });
+      result(null, { id: id, ...Outcome_assign_interpreter });
     }
   );
 };

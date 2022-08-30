@@ -8,6 +8,8 @@ exports.create = (req, res) => {
   }
 
   const type_phone = new Type_phone({
+
+    id: req.body.id,
     type: req.body.type,
   });
 

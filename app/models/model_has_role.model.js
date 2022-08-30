@@ -1,8 +1,9 @@
 const sql = require("./db.js");
 const Model_has_role = function(model_has_role) {
-  this.role_id  = model_has_role.role_id ;
-  this.model_type  = model_has_role.model_type ;
-  this.model_id  = model_has_role.model_id ;
+
+  this.role_id = model_has_role.role_id;
+  this.model_type = model_has_role.model_type;
+  this.model_id = model_has_role.model_id;
 };
 
 Model_has_role.create = (newModel_has_role, result) => {

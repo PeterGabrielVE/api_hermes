@@ -1,22 +1,22 @@
 const sql = require("./db.js");
 
 // constructor
-const Contacts_custome = function(contacts_custome) {
+const Contacts_custome = function(Contacts_custome) {
   
-  this.first_name= contacts_custome.first_name;
-  this.second_name= contacts_custome.second_name;
-  this.last_name= contacts_custome.last_name;
-  this.title= contacts_custome.title;
-  this.deparment= contacts_custome.deparment;
-  this.telphone= contacts_custome.telphone;
-  this.ext= contacts_custome.ext;
-  this.email= contacts_custome.email;
-  this.address= contacts_custome.address;
-  this.note= contacts_custome.note;
-  this.customer_id = contacts_custome.customer_id ;
-  this.type_id = contacts_custome.type_id ;
-  this.person_id = contacts_custome.person_id ;
-  this.deleted_at= contacts_custome.deleted_at;
+  this.first_name = Contacts_custome.first_name;
+  this.second_name = Contacts_custome.second_name;
+  this.last_name = Contacts_custome.last_name;
+  this.title = Contacts_custome.title;
+  this.deparment = Contacts_custome.deparment;
+  this.telphone = Contacts_custome.telphone;
+  this.ext = Contacts_custome.ext;
+  this.email = Contacts_custome.email;
+  this.address = Contacts_custome.address;
+  this.note = Contacts_custome.note;
+  this.customer_id = Contacts_custome.customer_id;
+  this.type_id = Contacts_custome.type_id;
+  this.person_id = Contacts_custome.person_id;
+  this.deleted_at = Contacts_custome.deleted_at;
 };
 
 Contacts_custome.create = (newContacts_custome, result) => {
@@ -32,7 +32,7 @@ Contacts_custome.create = (newContacts_custome, result) => {
 };
 
 Contacts_custome.findById = (id, result) => {
-  sql.query(`SELECT * FROM contacts_customer WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM Contacts_customer WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -50,7 +50,7 @@ Contacts_custome.findById = (id, result) => {
 };
 
 Contacts_custome.getAll = (title, result) => {
-  let query = "SELECT * FROM contacts_customer";
+  let query = "SELECT * FROM Contacts_customer";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -69,7 +69,7 @@ Contacts_custome.getAll = (title, result) => {
 };
 
 Contacts_custome.getAllPublished = result => {
-  sql.query("SELECT * FROM contacts_customer", (err, res) => {
+  sql.query("SELECT * FROM Contacts_customer", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -97,8 +97,8 @@ Contacts_custome.updateById = (id, Contacts_custome, result) => {
         return;
       }
 
-      console.log("updated Contacts_custome: ", { id: id, ...contacts_custome });
-      result(null, { id: id, ...contacts_custome });
+      console.log("updated Contacts_custome: ", { id: id, ...Contacts_custome });
+      result(null, { id: id, ...Contacts_custome });
     }
   );
 };

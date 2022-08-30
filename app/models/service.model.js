@@ -1,16 +1,16 @@
 const sql = require("./db.js");
-const Service = function(service) {
-
-  this.Service_Name = service.Service_Name ;
-  this.Service_State = service.Service_State ;
-  this.Service_Code= service.Service_Code;
-  this.Service_Rate= service.Service_Rate;
-  this.Service_Cus_Number = service.Service_Cus_Number ;
-  this.Service_Type = service.Service_Type ;
-  this.attachments= service.attachments;
-  this.customer_id= service.customer_id;
-  this.language_id= service.language_id;
-  this.services_offereds_id= service.services_offereds_id;
+const Service = function(Service) {
+  
+  this.Service_Name = Service.Service_Name;
+  this.Service_State = Service.Service_State;
+  this.Service_Code= Service.Service_Code;
+  this.Service_Rate= Service.Service_Rate;
+  this.Service_Cus_Number = Service.Service_Cus_Number;
+  this.Service_Type = Service.Service_Type;
+  this.attachments= Service.attachments;
+  this.customer_id= Service.customer_id;
+  this.language_id= Service.language_id;
+  this.Services_offereds_id= Service.Services_offereds_id;
 };
 
 Service.create = (newService, result) => {
@@ -27,7 +27,7 @@ Service.create = (newService, result) => {
 };
 
 Service.findById = (id, result) => {
-  sql.query(`SELECT * FROM services WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM Services WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -46,7 +46,7 @@ Service.findById = (id, result) => {
 };
 
 Service.getAll = (title, result) => {
-  let query = "SELECT * FROM services";
+  let query = "SELECT * FROM Services";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -65,7 +65,7 @@ Service.getAll = (title, result) => {
 };
 
 Service.getAllPublished = result => {
-  sql.query("SELECT * FROM services", (err, res) => {
+  sql.query("SELECT * FROM Services", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -93,8 +93,8 @@ Service.updateById = (id, Service, result) => {
         return;
       }
 
-      console.log("updated Service: ", { id: id, ...service });
-      result(null, { id: id, ...service });
+      console.log("updated Service: ", { id: id, ...Service });
+      result(null, { id: id, ...Service });
     }
   );
 };

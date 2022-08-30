@@ -7,10 +7,11 @@ exports.create = (req, res) => {
     });
   }
 
-  const iutcome_assign_interpreter = new Outcome_assign_interpreter({
-    interpreter_id : req.body.interpreter_id ,
-    jobs_id : req.body.jobs_id ,
-    outcome_id : req.body.outcome_id ,
+  const outcome_assign_interpreter = new Outcome_assign_interpreter({
+
+    interpreter_id : req.body.interpreter_id,
+    jobs_id : req.body.jobs_id,
+    outcome_id : req.body.outcome_id,
     notes: req.body.notes,
   });
 

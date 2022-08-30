@@ -9,7 +9,8 @@ exports.create = (req, res) => {
   }
 
   const peopl = new Peopl({
-    id_auto : req.body.id_auto ,
+    id_auto: req.body.id_auto,
+    id: req.body.id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     middle_name: req.body.middle_name,

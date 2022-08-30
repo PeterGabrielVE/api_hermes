@@ -1,5 +1,7 @@
 const sql = require("./db.js");
 const Type_phone = function(type_phone) {
+
+  this.id = type_phone.id;
   this.type = type_phone.type;
 };
 

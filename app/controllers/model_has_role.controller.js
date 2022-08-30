@@ -7,7 +7,7 @@ exports.create = (req, res) => {
     });
   }
 
-  const model_has_role = new Invoice({
+  const model_has_role = new Model_has_role({
     role_id : req.body.role_id ,
     model_type : req.body.model_type ,
     model_id : req.body.model_id,

@@ -11,6 +11,7 @@ exports.create = (req, res) => {
   const history_log = new History_log({
     name: req.body.name,
     info: req.body.info,
+    created_at: req.body.created_at,
     created_by: req.body.created_by,
     files: req.body.files,
     markRead: req.body.markRead,

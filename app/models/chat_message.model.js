@@ -1,13 +1,13 @@
 const sql = require("./db.js");
 
 // constructor
-const Chat_message = function(chat_message) {
+const Chat_message = function(Chat_message) {
   
-  this.chat_room_id = chat_message.chat_room_id;
-  this.user_id = chat_message.user_id;
-  this.message = chat_message.message;
-  this.created_at = chat_message.created_at;
-  this.updated_at = chat_message.updated_at;
+  this.chat_room_id = Chat_message.chat_room_id;
+  this.user_id = Chat_message.user_id;
+  this.message = Chat_message.message;
+  this.created_at = Chat_message.created_at;
+  this.updated_at = Chat_message.updated_at;
 };
 
 Chat_message.create = (newChat_message, result) => {
@@ -24,7 +24,7 @@ Chat_message.create = (newChat_message, result) => {
 };
 
 Chat_message.findById = (id, result) => {
-  sql.query(`SELECT * FROM chat_messages WHERE id = ${id}`, (err, res) => {
+  sql.query(`SELECT * FROM Chat_messages WHERE id = ${id}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -43,7 +43,7 @@ Chat_message.findById = (id, result) => {
 };
 
 Chat_message.getAll = (title, result) => {
-  let query = "SELECT * FROM chat_messages";
+  let query = "SELECT * FROM Chat_messages";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
@@ -62,7 +62,7 @@ Chat_message.getAll = (title, result) => {
 };
 
 Chat_message.getAllPublished = result => {
-  sql.query("SELECT * FROM chat_messages", (err, res) => {
+  sql.query("SELECT * FROM Chat_messages", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -91,8 +91,8 @@ Chat_message.updateById = (id, Chat_message, result) => {
         return;
       }
 
-      console.log("updated Chat_message: ", { id: id, ...chat_message });
-      result(null, { id: id, ...chat_message });
+      console.log("updated Chat_message: ", { id: id, ...Chat_message });
+      result(null, { id: id, ...Chat_message });
     }
   );
 };

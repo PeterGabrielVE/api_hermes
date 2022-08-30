@@ -6,21 +6,21 @@ exports.create = (req, res) => {
       message: "Content can not be empty!"
     });
   }
-
+ 
   const service = new Service({
-    Service_Name : req.body.Service_Name ,
-    Service_State : req.body.Service_State ,
+    Service_Name: req.body.Service_Name,
+    Service_State: req.body.Service_State,
     Service_Code: req.body.Service_Code,
     Service_Rate: req.body.Service_Rate,
-    Service_Cus_Number : req.body.Service_Cus_Number ,
-    Service_Type : req.body.Service_Type ,
+    Service_Cus_Number: req.body.Service_Cus_Number,
+    Service_Type: req.body.Service_Type,
     attachments: req.body.attachments,
     customer_id: req.body.customer_id,
     language_id: req.body.language_id,
     services_offereds_id: req.body.services_offereds_id,
   });
 
-  Service.create(Service, (err, data) => {
+  Service.create(service, (err, data) => {
     if (err)
       res.status(500).send({
         message:

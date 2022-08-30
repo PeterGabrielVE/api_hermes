@@ -108,7 +108,7 @@ exports.create = (req, res) => {
     Con_Badge_ID: req.body.Con_Badge_ID,
     Con_Work_Agency: req.body.Con_Work_Agency,
     Con_Agency_Currently_Working: req.body.Con_Agency_Currently_Working,
-    person_id : req.body.person_id ,
+    person_id: req.body.person_id,
   });
 
   Contractor.create(contractor, (err, data) => {
